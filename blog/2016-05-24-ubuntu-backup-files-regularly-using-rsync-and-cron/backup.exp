@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+
+set timeout 19900
+set pass "<mypassword>"
+spawn rsync -av -e ssh <user>@<ip address>:</home/user/remote> <"/home/user/backup/remote">
+expect "assword"
+sleep 2
+send "$pass\r"
+expect -re "total size is"
+expect -re "$ "
+puts "Successfully backed up!"

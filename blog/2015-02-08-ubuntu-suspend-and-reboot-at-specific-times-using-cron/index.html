@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>
+      
+          Ubuntu: Suspend and reboot at specific times using Cron - Harry Lee&#39;s Blog
+      
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="map[]" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://harrylee.me/img/favicon.png">
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://harrylee.me/style.min.74c1d842fda3c5dcef37cb1e26934d4a205babfe7cbfca23903297bcab678581.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://harrylee.me/css/pulp.css">
+
+  
+  
+  <link rel="stylesheet" href="https://harrylee.me/css/cv.css">
+  
+
+  <meta property="og:title" content="Ubuntu: Suspend and reboot at specific times using Cron" />
+<meta property="og:description" content="If you have a server at home and you want it to be on only during specific times and not 24&frasl;7, this script is for you.
+Cron not only is the best tool for this, it also handles scheduled tasks.
+ Cron is a system daemon used to execute desired tasks (in the background) at designated times.
+ Method  Install Cron on Ubuntu if it is not already installed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harrylee.me/blog/2015-02-08-ubuntu-suspend-and-reboot-at-specific-times-using-cron/" />
+<meta property="article:published_time" content="2015-02-08T20:13:47&#43;02:00"/>
+<meta property="article:modified_time" content="2015-02-08T20:13:47&#43;02:00"/>
+
+<meta itemprop="name" content="Ubuntu: Suspend and reboot at specific times using Cron">
+<meta itemprop="description" content="If you have a server at home and you want it to be on only during specific times and not 24&frasl;7, this script is for you.
+Cron not only is the best tool for this, it also handles scheduled tasks.
+ Cron is a system daemon used to execute desired tasks (in the background) at designated times.
+ Method  Install Cron on Ubuntu if it is not already installed.">
+
+
+<meta itemprop="datePublished" content="2015-02-08T20:13:47&#43;02:00" />
+<meta itemprop="dateModified" content="2015-02-08T20:13:47&#43;02:00" />
+<meta itemprop="wordCount" content="395">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu: Suspend and reboot at specific times using Cron"/>
+<meta name="twitter:description" content="If you have a server at home and you want it to be on only during specific times and not 24&frasl;7, this script is for you.
+Cron not only is the best tool for this, it also handles scheduled tasks.
+ Cron is a system daemon used to execute desired tasks (in the background) at designated times.
+ Method  Install Cron on Ubuntu if it is not already installed."/>
+
+  <!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+
+  </head>
+
+  <body>
+    
+  <h1>Ubuntu: Suspend and reboot at specific times using Cron</h1>
+  <header>
+  
+  <div class="avatar">
+    <img class="avatarMask" src="https://harrylee.me//img/avatar.png">
+    <a href="https://harrylee.me/"><img src="https://harrylee.me//img/avatar-border.svg" }}></a>
+  </div>
+  
+  <h2><a class="author" href="https://harrylee.me/">Harry Lee</a></h2>
+</header>
+
+  
+  <p class="date">February 8, 2015</p>
+  
+  <div id="contentBody">
+    
+
+<p>If you have a server at home and you want it to be on <strong>only during specific times</strong> and not <sup>24</sup>&frasl;<sub>7</sub>, this script is for you.</p>
+
+<p>Cron not only is the best tool for this, it also handles scheduled tasks.</p>
+
+<!-- more -->
+
+<blockquote>
+<p>Cron is a system daemon used to execute desired tasks (in the background) at designated times.</p>
+</blockquote>
+
+<h3 id="method">Method</h3>
+
+<ol>
+<li><p><strong>Install</strong> <em>Cron</em> on Ubuntu if it is not already installed.</p></li>
+
+<li><p><strong>Create</strong> a new file, <em>suspend_until</em>, in your ~/Documents/ and place the following contents in it. This script is written by <em>Romke van der Meulen</em>.</p>
+
+
+
+<pre><code class="language-bash">#!/bin/bash
+
+# Auto suspend and wake-up script
+#
+# Puts the computer on standby and automatically wakes it up at specified time
+#
+# Written by Romke van der Meulen &lt;redge.online@gmail.com&gt;
+# Minor mods fossfreedom for AskUbuntu
+#
+# Takes a 24hour time HH:MM as its argument
+# Example:
+# suspend_until 9:30
+# suspend_until 18:45
+
+# ------------------------------------------------------
+# Argument check
+if [ $# -lt 1 ]; then
+echo &quot;Usage: suspend_until HH:MM&quot;
+exit
+fi
+
+# Check whether specified time today or tomorrow
+DESIRED=$((`date +%s -d &quot;$1&quot;`))
+NOW=$((`date +%s`))
+if [ $DESIRED -lt $NOW ]; then
+DESIRED=$((`date +%s -d &quot;$1&quot;` + 24*60*60))
+fi
+
+# Kill rtcwake if already running
+sudo killall rtcwake
+
+# Set RTC wakeup time
+# N.B. change &quot;mem&quot; for the suspend option
+# find this by &quot;man rtcwake&quot;
+sudo rtcwake -a -m disk -t $DESIRED &amp;
+
+# feedback
+echo &quot;Suspending...&quot;
+
+# give rtcwake some time to make its stuff
+sleep 2
+
+# then suspend
+# N.B. dont usually require this bit
+#sudo pm-suspend
+
+# Any commands you want to launch after wakeup can be placed here
+# Remember: sudo may have expired by now
+
+# Wake up with monitor enabled N.B. change &quot;on&quot; for &quot;off&quot; if
+# you want the monitor to be disabled on wake
+xset dpms force on
+
+# and a fresh console
+clear
+echo &quot;Good morning!&quot;
+
+</code></pre>
+</li>
+
+<li><p><strong>Change the permission</strong> of the file so that it is executable.</p>
+
+<pre><code class="language-bash">     $ sudo chmod +x ~/Documents/suspend_until
+</code></pre>
+
+<ol>
+<li><strong>Run</strong> crontab.</li>
+</ol>
+
+<pre><code class="language-bash">     $ sudo crontab -e
+</code></pre></li>
+
+<li><p><strong>Place</strong> the following line at the end of the file.</p>
+
+<pre><code class="language-bash">      00 02 * * * /home/user/Documents/suspend_until 09:00
+</code></pre>
+
+<p>This basically tells the server to execute the <em>suspend_until</em> script at <em>2:00 AM</em>. The <em>09:00</em> appended at the end of the line tells the server to wake up at <em>9:00 AM</em>. The details are all <strong>explained</strong> in the script.</p>
+
+<ol>
+<li>Save the crontab file and <strong>reboot</strong>.</li>
+</ol></li>
+</ol>
+
+  </div>
+  <footer>
+  <p>
+  &copy; 2019 Harry Lee.
+  Powered by <a href="https://gohugo.io/">Hugo</a>
+  using the <a href="https://github.com/harryleesan/pulp/">pulp</a> theme.
+  </p>
+</footer>
+
+
+  </body>
+</html>

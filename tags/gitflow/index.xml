@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GitFlow on Harry Lee&#39;s Blog</title>
+    <link>https://harrylee.me/tags/gitflow/</link>
+    <description>Recent content in GitFlow on Harry Lee&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://harrylee.me/tags/gitflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git: Simplified GitFlow</title>
+      <link>https://harrylee.me/blog/2017-05-29-git-simplified-gitflow/</link>
+      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harrylee.me/blog/2017-05-29-git-simplified-gitflow/</guid>
+      <description>This post describes a simplified Git branching strategy to software versioning and release. This strategy is a slightly simplified version of GitFLow. This strategy does not contradict GitFlow in terms of software development (you can still use feature/* branches), but rather a slight deviation on the release side of GitFlow.
+Introduction This branching model is a recommendation to the existing GitFlow for a simpler software release cycle. This model is unbiased in terms of the development workflow, as long as you have a development branch you can use this strategy.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600px" height="500px" viewBox="0 0 600 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4">
+            <g id="Dev-commit" transform="translate(446.000000, 69.000000)" stroke="#A46834" stroke-width="3" fill="#F6A623">
+                <circle id="Oval" cx="12.5" cy="12.5" r="12.5"></circle>
+            </g>
+            <g id="Dev-commit" transform="translate(446.000000, 126.000000)" stroke="#A46834" stroke-width="3" fill="#F6A623">
+                <circle id="Oval" cx="12.5" cy="12.5" r="12.5"></circle>
+            </g>
+            <g id="Dev-commit" transform="translate(446.000000, 183.000000)" stroke="#A46834" stroke-width="3" fill="#F6A623">
+                <circle id="Oval" cx="12.5" cy="12.5" r="12.5"></circle>
+            </g>
+            <g id="Dev-commit" transform="translate(446.000000, 240.000000)" stroke="#A46834" stroke-width="3" fill="#F6A623">
+                <circle id="Oval" cx="12.5" cy="12.5" r="12.5"></circle>
+            </g>
+            <g id="Dev-commit" transform="translate(446.000000, 354.000000)" stroke="#A46834" stroke-width="3" fill="#F6A623">
+                <circle id="Oval" cx="12.5" cy="12.5" r="12.5"></circle>
+            </g>
+            <g id="Dev-pipe" transform="translate(457.000000, 99.000000)" stroke="#E19210" stroke-width="3" stroke-linecap="square">
+                <path d="M1.5,0.5 L1.5,21.5" id="Line"></path>
+            </g>
+            <g id="Dev-pipe" transform="translate(457.000000, 156.000000)" stroke="#E19210" stroke-width="3" stroke-linecap="square">
+                <path d="M1.5,0.5 L1.5,21.5" id="Line"></path>
+            </g>
+            <g id="Dev-pipe" transform="translate(457.000000, 213.000000)" stroke="#E19210" stroke-width="3" stroke-linecap="square">
+                <path d="M1.5,0.5 L1.5,21.5" id="Line"></path>
+            </g>
+            <g id="Dev-pipe" transform="translate(457.000000, 327.000000)" stroke="#E19210" stroke-width="3" stroke-linecap="square">
+                <path d="M1.5,0.5 L1.5,21.5" id="Line"></path>
+            </g>
+            <g id="Dev-pipe" transform="translate(457.000000, 270.000000)" stroke="#E19210" stroke-width="3" stroke-linecap="square">
+                <path d="M1.5,0.5 L1.5,21.5" id="Line"></path>
+            </g>
+            <g id="Dev-pipe" transform="translate(457.000000, 384.000000)" stroke="#E19210" stroke-width="3" stroke-linecap="square">
+                <path d="M1.5,0.5 L1.5,21.5" id="Line"></path>
+            </g>
+            <path d="M330.5,79.5 L330.5,178.5" id="Line" stroke-opacity="0.583644701" stroke="#77A9E2" stroke-linecap="square" stroke-dasharray="1,6,1,1"></path>
+            <path d="M203,79 L203,292" id="Line-Copy-2" stroke="#B8E986" stroke-linecap="square" stroke-dasharray="1,6,1,1"></path>
+            <text id="Dev" font-family="Lato-Regular, Lato" font-size="18" font-weight="normal" fill="#8F6932">
+                <tspan x="442" y="48">Dev</tspan>
+            </text>
+            <text id="Master-Copy" font-family="Lato-Regular, Lato" font-size="18" font-weight="normal" fill="#60A119">
+                <tspan x="175" y="48">Master</tspan>
+            </text>
+            <text id="Release-Candidate" font-family="Lato-Regular, Lato" font-size="18" font-weight="normal" fill="#4D6797">
+                <tspan x="300.404" y="37">Release </tspan>
+                <tspan x="290.3825" y="59">Candidate</tspan>
+            </text>
+            <g id="Branch" transform="translate(363.000000, 191.000000)">
+                <path d="M11,5 L61,5" id="Line" stroke="#4A4A4A" stroke-width="3" stroke-linecap="square"></path>
+                <polygon id="Triangle" fill="#4A4A4A" fill-rule="evenodd" transform="translate(5.000000, 5.000000) rotate(-90.000000) translate(-5.000000, -5.000000) " points="5 0 10 10 0 10"></polygon>
+            </g>
+            <g id="Release-commit" transform="translate(318.000000, 183.000000)" stroke="#4F7EB3" stroke-width="3" fill="#77A9E2">
+                <circle id="Oval" cx="12.5" cy="12.5" r="12.5"></circle>
+            </g>
+            <text id="rc0.1" font-family="Lato-Regular, Lato" font-size="16" font-weight="normal" fill="#4A4A4A">
+                <tspan x="378" y="187">rc0.1</tspan>
+            </text>
+            <g id="Release-pipe" transform="translate(329.000000, 213.000000)" stroke="#7999D2" stroke-width="3" stroke-linecap="square">
+                <path d="M1.5,0.5 L1.5,21.5" id="Line"></path>
+            </g>
+            <g id="Release-pipe" transform="translate(329.000000, 270.000000)" stroke="#7999D2" stroke-width="3" stroke-linecap="square">
+                <path d="M1.5,0.5 L1.5,21.5" id="Line"></path>
+            </g>
+            <g id="Release-commit" transform="translate(318.000000, 240.000000)" stroke="#4F7EB3" stroke-width="3" fill="#77A9E2">
+                <circle id="Oval" cx="12.5" cy="12.5" r="12.5"></circle>
+            </g>
+            <g id="Release-commit" transform="translate(318.000000, 297.000000)" stroke="#4F7EB3" stroke-width="3" fill="#77A9E2">
+                <circle id="Oval" cx="12.5" cy="12.5" r="12.5"></circle>
+            </g>
+            <path d="M349,253 L378.781526,253 C387.06996,253 393.789062,259.715907 393.789062,268.003571 L393.789062,294.959319 C393.789062,303.245563 400.499351,309.962891 408.783387,309.962891 L440.973633,309.962891" id="Line" stroke="#8296D2" stroke-width="3" stroke-linecap="square"></path>
+            <path d="M349,310 L377.996128,310 C386.282538,310 393,316.709351 393,325.005528 L393,407.994472 C393,416.281796 399.724736,423 407.990057,423 L441,423" id="Line-Copy" stroke="#8296D2" stroke-width="3" stroke-linecap="square"></path>
+            <g id="Release-Dev-merge" transform="translate(446.000000, 297.000000)" stroke-width="3">
+                <circle id="Oval" stroke="#A46834" fill="#F6A623" cx="12.5" cy="12.5" r="12.5"></circle>
+                <path d="M12.5,25 C12.5,19.3046875 12.5,7.34277344 12.5,0 C5.59644063,0 -3.55271368e-15,5.59644063 -3.55271368e-15,12.5 C-3.55271368e-15,19.4035594 5.59644063,25 12.5,25 Z" id="Oval" stroke="#4F7EB3" fill="#77A9E2"></path>
+            </g>
+            <g id="Release-Dev-merge" transform="translate(446.000000, 411.000000)" stroke-width="3">
+                <circle id="Oval" stroke="#A46834" fill="#F6A623" cx="12.5" cy="12.5" r="12.5"></circle>
+                <path d="M12.5,25 C12.5,19.3046875 12.5,7.34277344 12.5,0 C5.59644063,0 -3.55271368e-15,5.59644063 -3.55271368e-15,12.5 C-3.55271368e-15,19.4035594 5.59644063,25 12.5,25 Z" id="Oval" stroke="#4F7EB3" fill="#77A9E2"></path>
+            </g>
+            <g id="Release-Master-Merge" transform="translate(191.000000, 298.000000)" stroke-width="3">
+                <circle id="Oval" stroke="#749056" fill="#9ECD69" cx="12.5" cy="12.5" r="12.5"></circle>
+                <path d="M12,25 C18.9035594,25 24.5,19.4035594 24.5,12.5 C24.5,5.59644063 18.9035594,0 12,0 C12.0000001,8.0703125 12,19.3847656 12,25 Z" id="Oval" stroke="#4F7EB3" fill="#77A9E2"></path>
+            </g>
+            <path d="M312,309 L222,309" id="Line" stroke="#8993D3" stroke-width="3" stroke-linecap="square"></path>
+            <g id="Tag" transform="translate(121.000000, 299.000000)" stroke="#7D7D7E" stroke-opacity="0.845986187" stroke-width="2" fill="#FFFFFF">
+                <rect id="Combined-Shape" x="0" y="0" width="60" height="24" rx="8"></rect>
+            </g>
+            <text id="v0.1.1" font-family="Lato-Regular, Lato" font-size="14" font-weight="normal" fill="#4A4A4A">
+                <tspan x="132" y="317">v0.1.1</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://harrylee.me/blog/</loc>
+    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/</loc>
+    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/git/</loc>
+    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/git/</loc>
+    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/blog/2017-05-29-git-simplified-gitflow/</loc>
+    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/gitflow/</loc>
+    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/</loc>
+    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/software/</loc>
+    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/</loc>
+    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/docker/</loc>
+    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/docker-machine-microsoft-azure/</loc>
+    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/docker-microsoft-azure/</loc>
+    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/docker-swarm/</loc>
+    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/blog/2016-08-23-docker-docker-swarm-with-docker-machine-quick-setup-guide/</loc>
+    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/ubuntu/</loc>
+    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/docker/</loc>
+    <lastmod>2016-06-25T10:25:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/blog/2016-06-25-docker-create-your-own-ipsec-l2tp-vpn-container/</loc>
+    <lastmod>2016-06-25T10:25:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/ipsec/</loc>
+    <lastmod>2016-06-25T10:25:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/l2tp/</loc>
+    <lastmod>2016-06-25T10:25:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/vpn/</loc>
+    <lastmod>2016-06-25T10:25:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/vpn/</loc>
+    <lastmod>2016-06-25T10:25:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/debug/</loc>
+    <lastmod>2016-06-20T18:54:58+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/blog/2016-06-20-how-to-use-phpstorm-to-debug-remote-docker-container/</loc>
+    <lastmod>2016-06-20T18:54:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/phpstorm/</loc>
+    <lastmod>2016-06-20T18:54:58+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/virtualbox/</loc>
+    <lastmod>2016-06-20T18:54:58+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/blog/2016-05-31-ssl-how-to-generate-free-ssl-certificates-with-certbot-let-s-encrypt/</loc>
+    <lastmod>2016-05-31T18:01:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/terminal/</loc>
+    <lastmod>2016-05-31T18:01:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/web-server/</loc>
+    <lastmod>2016-05-31T18:01:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/server/</loc>
+    <lastmod>2016-05-24T16:07:47+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/blog/2016-05-24-ubuntu-backup-files-regularly-using-rsync-and-cron/</loc>
+    <lastmod>2016-05-24T16:07:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/blog/2015-02-08-ubuntu-suspend-and-reboot-at-specific-times-using-cron/</loc>
+    <lastmod>2015-02-08T20:13:47+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/blog/2015-01-10-ubuntu-sharing-externally-connected-drives-over-network/</loc>
+    <lastmod>2015-01-10T14:29:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/cv/</loc>
+    <lastmod>1988-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+</urlset>

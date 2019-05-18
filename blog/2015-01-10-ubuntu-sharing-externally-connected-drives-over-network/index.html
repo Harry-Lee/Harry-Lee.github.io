@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>
+      
+          Ubuntu: Sharing externally connected drives over network - Harry Lee&#39;s Blog
+      
+  </title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="map[]" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://harrylee.me/img/favicon.png">
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://harrylee.me/style.min.74c1d842fda3c5dcef37cb1e26934d4a205babfe7cbfca23903297bcab678581.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://harrylee.me/css/pulp.css">
+
+  
+  
+  <link rel="stylesheet" href="https://harrylee.me/css/cv.css">
+  
+
+  <meta property="og:title" content="Ubuntu: Sharing externally connected drives over network" />
+<meta property="og:description" content="When you have external drives connected to the server, it would be very useful if you can share these drives to users accessing the server as well. This is useful if you have a home media server with externally connected drives.
+This post aims to share drives that are NTFS formatted and changing the permissions of the mounted drives.
+Method  Unmount the drive that is connected already and remount to another folder giving permissions to users." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harrylee.me/blog/2015-01-10-ubuntu-sharing-externally-connected-drives-over-network/" />
+<meta property="article:published_time" content="2015-01-10T14:29:59&#43;02:00"/>
+<meta property="article:modified_time" content="2015-01-10T14:29:59&#43;02:00"/>
+
+<meta itemprop="name" content="Ubuntu: Sharing externally connected drives over network">
+<meta itemprop="description" content="When you have external drives connected to the server, it would be very useful if you can share these drives to users accessing the server as well. This is useful if you have a home media server with externally connected drives.
+This post aims to share drives that are NTFS formatted and changing the permissions of the mounted drives.
+Method  Unmount the drive that is connected already and remount to another folder giving permissions to users.">
+
+
+<meta itemprop="datePublished" content="2015-01-10T14:29:59&#43;02:00" />
+<meta itemprop="dateModified" content="2015-01-10T14:29:59&#43;02:00" />
+<meta itemprop="wordCount" content="160">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu: Sharing externally connected drives over network"/>
+<meta name="twitter:description" content="When you have external drives connected to the server, it would be very useful if you can share these drives to users accessing the server as well. This is useful if you have a home media server with externally connected drives.
+This post aims to share drives that are NTFS formatted and changing the permissions of the mounted drives.
+Method  Unmount the drive that is connected already and remount to another folder giving permissions to users."/>
+
+  <!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+
+  </head>
+
+  <body>
+    
+  <h1>Ubuntu: Sharing externally connected drives over network</h1>
+  <header>
+  
+  <div class="avatar">
+    <img class="avatarMask" src="https://harrylee.me//img/avatar.png">
+    <a href="https://harrylee.me/"><img src="https://harrylee.me//img/avatar-border.svg" }}></a>
+  </div>
+  
+  <h2><a class="author" href="https://harrylee.me/">Harry Lee</a></h2>
+</header>
+
+  
+  <p class="date">January 10, 2015</p>
+  
+  <div id="contentBody">
+    
+
+<p>When you have external drives connected to the server, it would be very <strong>useful</strong> if you can <strong>share these drives</strong> to <em>users</em> accessing the server as well. This is useful if you have a home media server with externally connected drives.</p>
+
+<p>This post aims to <strong>share drives</strong> that are NTFS formatted and changing the permissions of the mounted drives.</p>
+
+<!-- more -->
+
+<h3 id="method">Method</h3>
+
+<ol>
+<li><p><strong>Unmount the drive</strong> that is connected already and <strong>remount</strong> to another folder giving permissions to users.</p>
+
+<pre><code class="language-bash">   $ sudo umount -l /dev/sdX1
+</code></pre>
+
+<p>Where <code>sdX1</code> is the device ID.</p>
+
+<p>To <strong>check</strong> the device ID, execute:</p>
+
+<pre><code class="language-bash">    $ df
+</code></pre>
+
+<p>or</p>
+
+<pre><code class="language-bash">    $ lsblk
+</code></pre>
+
+<p><strong>Remount</strong> to another folder.</p>
+
+<pre><code class="language-bash">   $ sudo mount -t ntfs-3g -o rw /dev/sdX1 /media/path/to/folder
+</code></pre>
+
+<p>This <strong>assumes</strong> that you are connecting a <strong>NTFS formatted drive</strong>.</p></li>
+
+<li><p><strong>Change the permission</strong> of the mount point to allow access to users.</p>
+
+<pre><code class="language-bash">   $ sudo chown -R $USER:$USER /media/path/to/folder
+</code></pre>
+
+<p>This gives permission, both <strong>read and write</strong>, to the logged in user that accesses the drive. You can adjust this accordingly.</p></li>
+</ol>
+
+  </div>
+  <footer>
+  <p>
+  &copy; 2019 Harry Lee.
+  Powered by <a href="https://gohugo.io/">Hugo</a>
+  using the <a href="https://github.com/harryleesan/pulp/">pulp</a> theme.
+  </p>
+</footer>
+
+
+  </body>
+</html>

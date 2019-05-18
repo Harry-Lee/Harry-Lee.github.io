@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker Microsoft Azure on Harry Lee&#39;s Blog</title>
+    <link>https://harrylee.me/categories/docker-microsoft-azure/</link>
+    <description>Recent content in Docker Microsoft Azure on Harry Lee&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Aug 2016 16:05:02 +0000</lastBuildDate>
+    
+	<atom:link href="https://harrylee.me/categories/docker-microsoft-azure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker: Docker Swarm with Docker Machine Quick Setup Guide</title>
+      <link>https://harrylee.me/blog/2016-08-23-docker-docker-swarm-with-docker-machine-quick-setup-guide/</link>
+      <pubDate>Tue, 23 Aug 2016 16:05:02 +0000</pubDate>
+      
+      <guid>https://harrylee.me/blog/2016-08-23-docker-docker-swarm-with-docker-machine-quick-setup-guide/</guid>
+      <description>Docker already has an official documentation with tutorials and examples on how to go about setting up your own Docker Swarm nodes and cluster. This post is intended for those who have a fundamental grasp on Docker and are too lazy to read the documents. This post includes minimal explanation and focuses primarily on the configuration. It is written to be a series of instructions rather than a full fledged post.</description>
+    </item>
+    
+  </channel>
+</rss>
