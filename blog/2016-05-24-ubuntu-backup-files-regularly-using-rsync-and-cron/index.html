@@ -25,15 +25,16 @@
   
   <link rel="stylesheet" href="https://harrylee.me/css/cv.css">
   
+  <link rel="stylesheet" href="https://harrylee.me/css/all.min.css">
+  
 
   <meta property="og:title" content="Ubuntu: Backup files regularly using expect, rsync and Cron" />
 <meta property="og:description" content="Want to backup your remote files at regular intervals? This post is for you.
 This post focuses on: rsync, expect and cron. To access the remote server, I&rsquo;m assuming that you are using ssh (with password authentication) for that. If you use ftp or other protocols, you will have to tweak the instructions a bit. If you are using SSH with public key (well done!), you will have to tweak the rsync command to use public key." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harrylee.me/blog/2016-05-24-ubuntu-backup-files-regularly-using-rsync-and-cron/" />
-<meta property="article:published_time" content="2016-05-24T16:07:47&#43;00:00"/>
-<meta property="article:modified_time" content="2016-05-24T16:07:47&#43;00:00"/>
-
+<meta property="article:published_time" content="2016-05-24T16:07:47+00:00" />
+<meta property="article:modified_time" content="2016-05-24T16:07:47+00:00" />
 <meta itemprop="name" content="Ubuntu: Backup files regularly using expect, rsync and Cron">
 <meta itemprop="description" content="Want to backup your remote files at regular intervals? This post is for you.
 This post focuses on: rsync, expect and cron. To access the remote server, I&rsquo;m assuming that you are using ssh (with password authentication) for that. If you use ftp or other protocols, you will have to tweak the instructions a bit. If you are using SSH with public key (well done!), you will have to tweak the rsync command to use public key.">
@@ -129,11 +130,9 @@ puts &quot;Successfully backed up!&quot;
 <li><p><strong>Change the permission</strong> of the file to be executable:</p>
 
 <pre><code class="language-bash">    $ sudo chmod +x ~/Documents/backup.exp
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li><strong>Run</strong> cron:</li>
-</ol>
+<li><p><strong>Run</strong> cron:</p>
 
 <pre><code class="language-bash">    $ sudo crontab -e
 </code></pre></li>

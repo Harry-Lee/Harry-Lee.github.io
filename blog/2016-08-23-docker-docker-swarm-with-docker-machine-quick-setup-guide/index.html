@@ -25,14 +25,15 @@
   
   <link rel="stylesheet" href="https://harrylee.me/css/cv.css">
   
+  <link rel="stylesheet" href="https://harrylee.me/css/all.min.css">
+  
 
   <meta property="og:title" content="Docker: Docker Swarm with Docker Machine Quick Setup Guide" />
 <meta property="og:description" content="Docker already has an official documentation with tutorials and examples on how to go about setting up your own Docker Swarm nodes and cluster. This post is intended for those who have a fundamental grasp on Docker and are too lazy to read the documents. This post includes minimal explanation and focuses primarily on the configuration. It is written to be a series of instructions rather than a full fledged post." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harrylee.me/blog/2016-08-23-docker-docker-swarm-with-docker-machine-quick-setup-guide/" />
-<meta property="article:published_time" content="2016-08-23T16:05:02&#43;00:00"/>
-<meta property="article:modified_time" content="2016-08-23T16:05:02&#43;00:00"/>
-
+<meta property="article:published_time" content="2016-08-23T16:05:02+00:00" />
+<meta property="article:modified_time" content="2016-08-23T16:05:02+00:00" />
 <meta itemprop="name" content="Docker: Docker Swarm with Docker Machine Quick Setup Guide">
 <meta itemprop="description" content="Docker already has an official documentation with tutorials and examples on how to go about setting up your own Docker Swarm nodes and cluster. This post is intended for those who have a fundamental grasp on Docker and are too lazy to read the documents. This post includes minimal explanation and focuses primarily on the configuration. It is written to be a series of instructions rather than a full fledged post.">
 
@@ -346,13 +347,11 @@ dockerconsul   -        generic      Running   tcp://104.41.139.22:2376         
 <li><p>Set your docker machine to point to swarm master:</p>
 
 <pre><code class="language-bash">$ eval $(docker-machine env --swarm dockera)
-</code></pre>
+</code></pre></li>
 
-<ol>
 <li><p>Check if you are in the swarm environment by executing <code>docker info</code>, you should see all the connected nodes.</p></li>
 
-<li><p>Create your <code>overlay</code> network:</p></li>
-</ol>
+<li><p>Create your <code>overlay</code> network:</p>
 
 <pre><code class="language-bash">$ docker network create \
 --driver overlay \

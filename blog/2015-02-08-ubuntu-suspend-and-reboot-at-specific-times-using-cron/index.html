@@ -25,6 +25,8 @@
   
   <link rel="stylesheet" href="https://harrylee.me/css/cv.css">
   
+  <link rel="stylesheet" href="https://harrylee.me/css/all.min.css">
+  
 
   <meta property="og:title" content="Ubuntu: Suspend and reboot at specific times using Cron" />
 <meta property="og:description" content="If you have a server at home and you want it to be on only during specific times and not 24&frasl;7, this script is for you.
@@ -33,9 +35,8 @@ Cron not only is the best tool for this, it also handles scheduled tasks.
  Method  Install Cron on Ubuntu if it is not already installed." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harrylee.me/blog/2015-02-08-ubuntu-suspend-and-reboot-at-specific-times-using-cron/" />
-<meta property="article:published_time" content="2015-02-08T20:13:47&#43;02:00"/>
-<meta property="article:modified_time" content="2015-02-08T20:13:47&#43;02:00"/>
-
+<meta property="article:published_time" content="2015-02-08T20:13:47+02:00" />
+<meta property="article:modified_time" content="2015-02-08T20:13:47+02:00" />
 <meta itemprop="name" content="Ubuntu: Suspend and reboot at specific times using Cron">
 <meta itemprop="description" content="If you have a server at home and you want it to be on only during specific times and not 24&frasl;7, this script is for you.
 Cron not only is the best tool for this, it also handles scheduled tasks.
@@ -170,11 +171,9 @@ echo &quot;Good morning!&quot;
 <li><p><strong>Change the permission</strong> of the file so that it is executable.</p>
 
 <pre><code class="language-bash">     $ sudo chmod +x ~/Documents/suspend_until
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li><strong>Run</strong> crontab.</li>
-</ol>
+<li><p><strong>Run</strong> crontab.</p>
 
 <pre><code class="language-bash">     $ sudo crontab -e
 </code></pre></li>
@@ -184,11 +183,9 @@ echo &quot;Good morning!&quot;
 <pre><code class="language-bash">      00 02 * * * /home/user/Documents/suspend_until 09:00
 </code></pre>
 
-<p>This basically tells the server to execute the <em>suspend_until</em> script at <em>2:00 AM</em>. The <em>09:00</em> appended at the end of the line tells the server to wake up at <em>9:00 AM</em>. The details are all <strong>explained</strong> in the script.</p>
+<p>This basically tells the server to execute the <em>suspend_until</em> script at <em>2:00 AM</em>. The <em>09:00</em> appended at the end of the line tells the server to wake up at <em>9:00 AM</em>. The details are all <strong>explained</strong> in the script.</p></li>
 
-<ol>
-<li>Save the crontab file and <strong>reboot</strong>.</li>
-</ol></li>
+<li><p>Save the crontab file and <strong>reboot</strong>.</p></li>
 </ol>
 
   </div>
