@@ -17,9 +17,10 @@
   
   
   
-  <link rel="stylesheet" href="https://harrylee.me/style.min.74c1d842fda3c5dcef37cb1e26934d4a205babfe7cbfca23903297bcab678581.css">
+  
+  <link rel="stylesheet" href="https://harrylee.me/style.min.5e3cee18517577961c70ad88917d12890b3f22161e887f8da699d860f7dfb0ec.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://harrylee.me/css/pulp.css">
+  <link href="https://harrylee.me/css/theme.css?1585635527" rel="stylesheet">
 
   
   
@@ -38,16 +39,13 @@ This post outlines the configuration needed to incorporate the debugging power o
 <meta itemprop="name" content="Docker: How to use PhpStorm to debug remote Docker container for Web Development using Xdebug">
 <meta itemprop="description" content="There are many tools that can be used for debugging when developing a web app using PHP. These debugging tools are very useful in a local development environment, you can view the states of variables, indicate line breaks etc. However, these tools become difficult to use when you decide to include Docker in your workflow.
 This post outlines the configuration needed to incorporate the debugging power of the PhpStorm IDE to your PHP based web app.">
-
-
 <meta itemprop="datePublished" content="2016-06-20T18:54:58&#43;00:00" />
 <meta itemprop="dateModified" content="2016-06-20T18:54:58&#43;00:00" />
 <meta itemprop="wordCount" content="553">
 
 
 
-<meta itemprop="keywords" content="Docker,PhpStorm,Debug," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Docker,PhpStorm,Debug," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker: How to use PhpStorm to debug remote Docker container for Web Development using Xdebug"/>
 <meta name="twitter:description" content="There are many tools that can be used for debugging when developing a web app using PHP. These debugging tools are very useful in a local development environment, you can view the states of variables, indicate line breaks etc. However, these tools become difficult to use when you decide to include Docker in your workflow.
 This post outlines the configuration needed to incorporate the debugging power of the PhpStorm IDE to your PHP based web app."/>
@@ -79,46 +77,32 @@ This post outlines the configuration needed to incorporate the debugging power o
   
   <p class="date">June 20, 2016</p>
   
-  
   <div id="contentBody">
-    
-
-<p>There are many tools that can be used for debugging when developing a <em>web app</em> using <strong>PHP</strong>. These debugging tools are very useful in a local development environment, you can view the <strong>states of variables</strong>, <strong>indicate line breaks</strong> etc. However, these tools become difficult to use when you decide to include <a href="https://www.docker.com"><strong>Docker</strong></a> in your workflow.</p>
-
+    <p>There are many tools that can be used for debugging when developing a <em>web app</em> using <strong>PHP</strong>. These debugging tools are very useful in a local development environment, you can view the <strong>states of variables</strong>, <strong>indicate line breaks</strong> etc. However, these tools become difficult to use when you decide to include <a href="https://www.docker.com"><strong>Docker</strong></a> in your workflow.</p>
 <p>This post outlines the configuration needed to incorporate the debugging power of the <a href="https://www.jetbrains.com/phpstorm/"><strong>PhpStorm</strong></a> IDE to your <strong>PHP</strong> based <em>web app</em>. We will not be using the official <a href="https://blog.jetbrains.com/phpstorm/2015/10/docker-support-in-phpstorm/">Docker Support in PhpStorm</a>. This is because we are not integrating <strong>PhpStorm</strong> fully with <strong>Docker</strong>, we are merely using <strong>PhpStorm</strong> for <strong>debugging</strong> purposes.</p>
-
 <p>This post assumes you have the following <strong>set up</strong>:</p>
-
 <ul>
 <li>Using <strong>Docker</strong> (with the official <a href="https://hub.docker.com/_/php/">PHP image</a>)</li>
 <li>Using <strong>PhpStorm</strong> (version 10.0.*)</li>
 <li>Using <strong>Docker</strong> in a <strong>VirtualBox</strong> setup either using <code>docker-machine</code> or an Ubuntu VM.</li>
 </ul>
-
 <h2 id="my-set-up">My Set Up</h2>
-
 <p>The following describes <strong>my</strong> set up of the <em>development environment</em>. You do not need to use the exact set up, but the configuration to follow assume that you are using this set up.</p>
-
 <ol>
 <li>A local <strong>VirtualBox</strong> VM running Ubuntu 16.04 Xenial with the latest <code>docker-engine</code> installed. I did not opt to run <strong>Docker</strong> using <strong>Docker for Mac</strong> or <strong>Docker Toolbox</strong>, I just <code>ssh</code> into my Ubuntu VM and run docker natively from there.</li>
 <li>My docker containers are based on the <strong>LAMP</strong> stack.</li>
 <li>I have PhpStorm installed on my <strong>host</strong> (not my VM). The PhpStorm project is located in a local folder on my host. This local folder is then mounted as a shared folder on the <strong>VirtualBox</strong> VM. So changes I make to this folder is reflected in the VM and vice versa. In the VM, this shared folder is also mounted as a volume on the docker container. So: changes in code in <strong>PhpStorm</strong> is reflected in the VM and hence reflected in the docker container.</li>
 </ol>
-
 <h2 id="configuration">Configuration</h2>
-
 <p>With the above set up, we essentially want to use <strong>PhpStorm</strong> to debug a remote server.</p>
-
 <p>The configuration used in this set up is essentially a summary from these two sources:</p>
-
 <ul>
 <li><a href="https://gist.github.com/chadrien/c90927ec2d160ffea9c4">Debug your PHP in Docker with Intellij/PHPStorm and Xdebug</a></li>
 <li><a href="https://gist.github.com/jehaby/61a89b15571b4bceee2417106e80240d">Debug your PHP in Docker with Intellij/PHPStorm and Xdebug (forked from the above)</a></li>
 </ul>
-
 <ol>
-<li><p>Create your own <strong>Dockerfile</strong> with your own configuration and add the below to install <strong>Xdebug</strong>:</p>
-
+<li>
+<p>Create your own <strong>Dockerfile</strong> with your own configuration and add the below to install <strong>Xdebug</strong>:</p>
 <pre><code>    FROM php:5
     ...
     RUN yes | pecl install xdebug \
@@ -126,30 +110,30 @@ This post outlines the configuration needed to incorporate the debugging power o
         &amp;&amp; echo &quot;xdebug.remote_enable=on&quot; &gt;&gt; /usr/local/etc/php/conf.d/xdebug.ini \
         &amp;&amp; echo &quot;xdebug.remote_autostart=off&quot; &gt;&gt; /usr/local/etc/php/conf.d/xdebug.ini
 </code></pre></li>
-
-<li><p>Build your image</p></li>
-
-<li><p>Start a container with your image but with the following <em>environment variables</em>:</p>
-
+<li>
+<p>Build your image</p>
+</li>
+<li>
+<p>Start a container with your image but with the following <em>environment variables</em>:</p>
 <ul>
 <li><code>XDEBUG_CONFIG: &quot;remote_host=10.0.2.2&quot;</code></li>
 <li><code>PHP_IDE_CONFIG: &quot;serverName=my.local&quot;</code></li>
 <li>You can either the run the container with the <code>-e</code> option or in a <code>docker-compose.yml</code> file.</li>
-</ul></li>
-
-<li><p>In <strong>PhpStorm</strong> go to <code>Languages &amp; Frameworks</code> &gt; <code>PHP</code> &gt; <code>Servers</code> &gt; and set the following:
-<img src="1.png" alt="PhpStrom Setting" /></p>
-
+</ul>
+</li>
+<li>
+<p>In <strong>PhpStorm</strong> go to <code>Languages &amp; Frameworks</code> &gt; <code>PHP</code> &gt; <code>Servers</code> &gt; and set the following:
+<img src="1.png" alt="PhpStrom Setting"></p>
 <ul>
 <li><em>Name</em> should match <code>PHP_IDE_CONFIG</code> previously set</li>
 <li>You can modify the <em>Host</em> and <em>Port</em> to your own settings (the hostname that you use to <code>ssh</code> to the VM)</li>
-</ul></li>
-
-<li><p>All set!</p></li>
+</ul>
+</li>
+<li>
+<p>All set!</p>
+</li>
 </ol>
-
 <h2 id="usage">Usage</h2>
-
 <ol>
 <li>Set a <em>break point</em> in your code base in <strong>PhpStorm</strong>.</li>
 <li>Access the web page on your local machine.</li>
@@ -163,7 +147,7 @@ This post outlines the configuration needed to incorporate the debugging power o
   <p>
   &copy; 2019 Harry Lee.
   Powered by <a href="https://gohugo.io/">Hugo</a>
-  using the <a href="https://github.com/harryleesan/pulp/">pulp</a> theme.
+  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
   </p>
 </footer>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Harry Lee&#39;s Blog</title>
@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Docker</title>
+      <link>https://harrylee.me/categories/docker/</link>
+      <pubDate>Tue, 23 Aug 2016 16:05:02 +0000</pubDate>
+      
+      <guid>https://harrylee.me/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Docker Microsoft Azure</title>
       <link>https://harrylee.me/categories/docker-microsoft-azure/</link>
       <pubDate>Tue, 23 Aug 2016 16:05:02 +0000</pubDate>
@@ -44,15 +53,6 @@
       <pubDate>Tue, 23 Aug 2016 16:05:02 +0000</pubDate>
       
       <guid>https://harrylee.me/categories/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://harrylee.me/categories/docker/</link>
-      <pubDate>Sat, 25 Jun 2016 10:25:14 +0000</pubDate>
-      
-      <guid>https://harrylee.me/categories/docker/</guid>
       <description></description>
     </item>
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -13,12 +13,12 @@
   </url>
   
   <url>
-    <loc>https://harrylee.me/categories/git/</loc>
+    <loc>https://harrylee.me/tags/git/</loc>
     <lastmod>2017-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://harrylee.me/tags/git/</loc>
+    <loc>https://harrylee.me/categories/git/</loc>
     <lastmod>2017-05-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -29,11 +29,6 @@
   
   <url>
     <loc>https://harrylee.me/tags/gitflow/</loc>
-    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harrylee.me/</loc>
     <lastmod>2017-05-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -49,6 +44,11 @@
   
   <url>
     <loc>https://harrylee.me/tags/docker/</loc>
+    <lastmod>2016-08-30T10:22:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/docker/</loc>
     <lastmod>2016-08-30T10:22:23+00:00</lastmod>
   </url>
   
@@ -74,11 +74,6 @@
   
   <url>
     <loc>https://harrylee.me/categories/ubuntu/</loc>
-    <lastmod>2016-08-30T10:22:23+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harrylee.me/categories/docker/</loc>
     <lastmod>2016-08-30T10:22:23+00:00</lastmod>
   </url>
   
@@ -164,6 +159,11 @@
   
   <url>
     <loc>https://harrylee.me/cv/</loc>
+    <lastmod>1988-08-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/</loc>
     <lastmod>1988-08-27T00:00:00+00:00</lastmod>
   </url>
   

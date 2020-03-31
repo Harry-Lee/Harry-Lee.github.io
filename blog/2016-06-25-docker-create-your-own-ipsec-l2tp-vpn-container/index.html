@@ -17,9 +17,10 @@
   
   
   
-  <link rel="stylesheet" href="https://harrylee.me/style.min.74c1d842fda3c5dcef37cb1e26934d4a205babfe7cbfca23903297bcab678581.css">
+  
+  <link rel="stylesheet" href="https://harrylee.me/style.min.5e3cee18517577961c70ad88917d12890b3f22161e887f8da699d860f7dfb0ec.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://harrylee.me/css/pulp.css">
+  <link href="https://harrylee.me/css/theme.css?1585635527" rel="stylesheet">
 
   
   
@@ -38,16 +39,13 @@ Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up a
 <meta itemprop="name" content="Docker: Create your own IPsec/L2TP VPN container">
 <meta itemprop="description" content="To configure your own VPN hosted on your own VPS is not difficult at all, especially when there are numerous configuration scripts lying around the internet. We will set up such a VPN using Docker hosted on a Microsoft Azure VM.
 Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up as me, as the configurations should be the same with any VM (Virtual Machine) running Docker (that&rsquo;s the beauty of Docker!">
-
-
 <meta itemprop="datePublished" content="2016-06-25T10:25:14&#43;00:00" />
 <meta itemprop="dateModified" content="2016-08-30T10:22:23&#43;00:00" />
 <meta itemprop="wordCount" content="434">
 
 
 
-<meta itemprop="keywords" content="Docker,L2TP,IPsec,VPN," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Docker,L2TP,IPsec,VPN," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker: Create your own IPsec/L2TP VPN container"/>
 <meta name="twitter:description" content="To configure your own VPN hosted on your own VPS is not difficult at all, especially when there are numerous configuration scripts lying around the internet. We will set up such a VPN using Docker hosted on a Microsoft Azure VM.
 Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up as me, as the configurations should be the same with any VM (Virtual Machine) running Docker (that&rsquo;s the beauty of Docker!"/>
@@ -79,50 +77,37 @@ Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up a
   
   <p class="date">June 25, 2016</p>
   
-  <p class="date">Updated: August 30, 2016</p>
-  
-  
   <div id="contentBody">
-    
-
-<p>To configure your own <strong>VPN</strong> hosted on your own <strong>VPS</strong> is not difficult at all, especially when there are <a href="https://github.com/hwdsl2/setup-ipsec-vpn">numerous configuration scripts</a> lying around the internet. We will set up such a <strong>VPN</strong> using <strong>Docker</strong> hosted on a <strong>Microsoft Azure VM</strong>.</p>
-
-<!-- more -->
-
+    <p>To configure your own <strong>VPN</strong> hosted on your own <strong>VPS</strong> is not difficult at all, especially when there are <a href="https://github.com/hwdsl2/setup-ipsec-vpn">numerous configuration scripts</a> lying around the internet. We will set up such a <strong>VPN</strong> using <strong>Docker</strong> hosted on a <strong>Microsoft Azure VM</strong>.</p>
+<!-- raw HTML omitted -->
 <h2 id="set-up">Set Up</h2>
-
 <p>Listed below is my set up. You don&rsquo;t have to use the exact set up as me, as the configurations should be the same with any VM (Virtual Machine) running Docker (that&rsquo;s the beauty of Docker!).</p>
-
 <ul>
 <li>Azure VM running Ubuntu 16.04 Xenial
-
 <ul>
 <li>The size of the Virtual Machine does not matter, so you can choose the cheapest one.</li>
 <li>You can use other Linux distributions, supported ones are:
-
 <ul>
 <li>Ubuntu 16.04, 14.04, 12.04</li>
 <li>Debian 8 Jessie</li>
 <li>CentOS 7, 6</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>VM has Port <strong>4500</strong> and <strong>500</strong> open for <strong>UDP</strong> connections.</li>
 <li>Latest <code>docker-engine</code> installed</li>
 <li>Using the <a href="https://github.com/hwdsl2/docker-ipsec-vpn-server">IPsec VPN Server on Docker</a> Docker image</li>
 </ul>
-
 <h2 id="configuration">Configuration</h2>
-
 <p>The configuration is extremely simple. You literally just follow the instructions listed on <a href="https://github.com/hwdsl2/docker-ipsec-vpn-server">IPsec VPN Server on Docker</a>. I shall summarise it below. The below instructions should be executed on the VM and I assume that you have the set up mentioned above.</p>
-
 <ol>
-<li><p>Pull the image</p>
-
-<pre><code class="language-bash">    $ docker pull hwdsl2/ipsec-vpn-server
-</code></pre></li>
-
-<li><p>Create an <em>environment file</em> in your home directory e.g. (<em>/home/dockeruser/vpn.env</em>) with the following content:</p>
-
+<li>
+<p>Pull the image</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ docker pull hwdsl2/ipsec-vpn-server
+</code></pre></div></li>
+<li>
+<p>Create an <em>environment file</em> in your home directory e.g. (<em>/home/dockeruser/vpn.env</em>) with the following content:</p>
 <pre><code>VPN_IPSEC_PSK=&lt;IPsec pre-shared key&gt;
 VPN_USER=&lt;VPN Username&gt;
 VPN_PASSWORD=&lt;VPN Password&gt;
@@ -132,56 +117,51 @@ VPN_PASSWORD=&lt;VPN Password&gt;
 <div class="notices warning" ><p><strong>DO NOT</strong> put single or double quotes around values, or add space around <code>=</code>. Also, <strong>DO NOT</strong> use these characters within values: <code>\ &quot; '</code></p>
 </div>
 
-
-<ol>
-<li><p>Load the IPsec <code>NETKEY</code> kernel module:</p>
-
-<pre><code class="language-bash">    $ sudo modprobe af_key
-</code></pre></li>
-
-<li><p>Change directory to your home directory and execute below:</p>
-
-<pre><code class="language-bash">$ docker run \
-    --name ipsec-vpn-server \
-    --env-file ./vpn.env \
-    -p 500:500/udp \
-    -p 4500:4500/udp \
-    -v /lib/modules:/lib/modules:ro \
-    -d --privileged \
-    hwdsl2/ipsec-vpn-server
-</code></pre></li>
-
-<li><p>Now you have a running VPN!</p></li>
+<ol start="3">
+<li>
+<p>Load the IPsec <code>NETKEY</code> kernel module:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo modprobe af_key
+</code></pre></div></li>
+<li>
+<p>Change directory to your home directory and execute below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --name ipsec-vpn-server <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --env-file ./vpn.env <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -p 500:500/udp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -p 4500:4500/udp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -v /lib/modules:/lib/modules:ro <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    -d --privileged <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    hwdsl2/ipsec-vpn-server
+</code></pre></div></li>
+<li>
+<p>Now you have a running VPN!</p>
+</li>
 </ol>
-
 <h2 id="ports">Ports</h2>
-
 <p>You have to <strong>remember</strong> to open up the ports (500/UDP and 4500/UDP) in order for this to work. I will describe how to do this for <strong>Azure VMs</strong> using the <strong>Network Security Group</strong> settings.</p>
 
 <div class="notices note" ><p>The following configuration <strong>assumes</strong> that your VM was created using <em>Resource Manager</em> and <strong>not</strong> <em>Classic</em>.</p>
 </div>
 
-
 <ol>
-<li><p>In your VM instance, select <em>Settings-&gt;Network interfaces-&gt;Your VM interface</em>.</p>
-
-<p><img src="1.png" alt="Network Interface" /></p></li>
-
-<li><p>In the <em>Network Interface</em>, select <em>Settings-&gt;Network security group-&gt;Your VM network security group</em>. There should just be one by default.</p>
-
-<p><img src="2.png" alt="Network Security" /></p></li>
-
-<li><p>In the <em>Network Security Group</em>, select <em>Settings-&gt;Inbound security rules-&gt;Your rules</em></p>
-
-<p><img src="3.png" alt="Inbound Security Rules" /></p></li>
-
-<li><p>Add the two ports to your <em>inbound rules</em>: <strong>500/UDP</strong> and <strong>4500/UDP</strong></p>
-
-<p><img src="4.png" alt="Open Ports" /></p></li>
+<li>
+<p>In your VM instance, select <em>Settings-&gt;Network interfaces-&gt;Your VM interface</em>.</p>
+<p><img src="1.png" alt="Network Interface"></p>
+</li>
+<li>
+<p>In the <em>Network Interface</em>, select <em>Settings-&gt;Network security group-&gt;Your VM network security group</em>. There should just be one by default.</p>
+<p><img src="2.png" alt="Network Security"></p>
+</li>
+<li>
+<p>In the <em>Network Security Group</em>, select <em>Settings-&gt;Inbound security rules-&gt;Your rules</em></p>
+<p><img src="3.png" alt="Inbound Security Rules"></p>
+</li>
+<li>
+<p>Add the two ports to your <em>inbound rules</em>: <strong>500/UDP</strong> and <strong>4500/UDP</strong></p>
+<p><img src="4.png" alt="Open Ports"></p>
+</li>
 </ol>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>Now you can go ahead and connect to your newly configured <strong>VPN</strong>! You can restart or stop your container at any time if you do not want to incur costs when you are not using it. This can all be achieved with one command thanks to <strong>Docker</strong>!</p>
 
   </div>
@@ -189,7 +169,7 @@ VPN_PASSWORD=&lt;VPN Password&gt;
   <p>
   &copy; 2019 Harry Lee.
   Powered by <a href="https://gohugo.io/">Hugo</a>
-  using the <a href="https://github.com/harryleesan/pulp/">pulp</a> theme.
+  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
   </p>
 </footer>
 

@@ -17,9 +17,10 @@
   
   
   
-  <link rel="stylesheet" href="https://harrylee.me/style.min.74c1d842fda3c5dcef37cb1e26934d4a205babfe7cbfca23903297bcab678581.css">
+  
+  <link rel="stylesheet" href="https://harrylee.me/style.min.5e3cee18517577961c70ad88917d12890b3f22161e887f8da699d860f7dfb0ec.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://harrylee.me/css/pulp.css">
+  <link href="https://harrylee.me/css/theme.css?1585635527" rel="stylesheet">
 
   
   
@@ -38,16 +39,13 @@ Introduction This branching model is a recommendation to the existing GitFlow fo
 <meta itemprop="name" content="Git: Simplified GitFlow">
 <meta itemprop="description" content="This post describes a simplified Git branching strategy to software versioning and release. This strategy is a slightly simplified version of GitFLow. This strategy does not contradict GitFlow in terms of software development (you can still use feature/* branches), but rather a slight deviation on the release side of GitFlow.
 Introduction This branching model is a recommendation to the existing GitFlow for a simpler software release cycle. This model is unbiased in terms of the development workflow, as long as you have a development branch you can use this strategy.">
-
-
 <meta itemprop="datePublished" content="2017-05-26T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-05-26T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="584">
 
 
 
-<meta itemprop="keywords" content="Git,GitFlow," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Git,GitFlow," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git: Simplified GitFlow"/>
 <meta name="twitter:description" content="This post describes a simplified Git branching strategy to software versioning and release. This strategy is a slightly simplified version of GitFLow. This strategy does not contradict GitFlow in terms of software development (you can still use feature/* branches), but rather a slight deviation on the release side of GitFlow.
 Introduction This branching model is a recommendation to the existing GitFlow for a simpler software release cycle. This model is unbiased in terms of the development workflow, as long as you have a development branch you can use this strategy."/>
@@ -79,62 +77,33 @@ Introduction This branching model is a recommendation to the existing GitFlow fo
   
   <p class="date">May 26, 2017</p>
   
-  
   <div id="contentBody">
-    
-
-<p>This post describes a simplified <strong>Git</strong> branching strategy to software versioning and release. This strategy is a slightly simplified version of <a href="https://datasift.github.io/gitflow/IntroducingGitFlow.html">GitFLow</a>. This strategy does not contradict <strong>GitFlow</strong> in terms of software development (you can still use <em>feature/*</em> branches), but rather a slight deviation on the release side of <strong>GitFlow</strong>.</p>
-
+    <p>This post describes a simplified <strong>Git</strong> branching strategy to software versioning and release. This strategy is a slightly simplified version of <a href="https://datasift.github.io/gitflow/IntroducingGitFlow.html">GitFLow</a>. This strategy does not contradict <strong>GitFlow</strong> in terms of software development (you can still use <em>feature/*</em> branches), but rather a slight deviation on the release side of <strong>GitFlow</strong>.</p>
 <h2 id="introduction">Introduction</h2>
-
 <p>This branching model is a recommendation to the existing <strong>GitFlow</strong> for a simpler software release cycle. This model is unbiased in terms of the development workflow, as long as you have a development branch you can use this strategy. If you know <strong>GitFlow</strong> already, this strategy is simply a slight deviation of it with the removal of <em>hot fix</em> branches.</p>
-
 <h3 id="development">Development</h3>
-
-<p><img src="1.svg" alt="Dev" /></p>
-
+<p><img src="1.svg" alt="Dev"></p>
 <h4 id="dev-branch">Dev Branch</h4>
-
 <p>The <strong>development (Dev) branch</strong> consists of the latest development commits. Feature branches can be used, but <strong>must</strong> be merged back to the <strong>Dev</strong> branch at the end of the day for consistency. <strong>Continuous intergration</strong> (e.g. running of unit tests) should be implemented on every commit/merge to <strong>Dev</strong>.</p>
-
 <h3 id="release-candidate">Release Candidate</h3>
-
-<p><img src="2.svg" alt="Release Candidate" /></p>
-
+<p><img src="2.svg" alt="Release Candidate"></p>
 <h4 id="release-candidate-branch">Release Candidate Branch</h4>
-
 <p>The <strong>Release Candidate (rc)</strong> branch is <strong>always</strong> branched off <strong>Dev</strong> and is only carried out when the team agrees on a release. Once a <strong>Release Candidate</strong> branch is created, <strong>no more features</strong> can be added to this branch, <strong>only</strong> <em>bug fixes</em> and <em>minor fixes</em> can be carried out on the branch. <strong>Release Branch</strong> names have the prefix <em>rc</em> followed by the version number (<em>semantic versioning without the patch</em>). Extra features can still be added to the <strong>Dev</strong> branch.</p>
-
-<p><img src="3.svg" alt="Continously merge back to Dev" /></p>
-
+<p><img src="3.svg" alt="Continously merge back to Dev"></p>
 <h4 id="continuously-merge-back-to-dev">Continuously merge back to Dev</h4>
-
 <p>Commits on the <strong>Release Candidate</strong> branch (i.e. bug fixes) should be <strong>continuously merged back to Dev</strong>, so that fixes are reflected in <strong>Dev</strong> and is available to other team members. Continuous Integration pipeline should be set up to monitor the tip of the <strong>Release Candidate</strong> branch.</p>
-
 <h3 id="master">Master</h3>
-
-<p><img src="4.svg" alt="Master as a tag branch" /></p>
-
+<p><img src="4.svg" alt="Master as a tag branch"></p>
 <h4 id="master-as-a-collection-of-stable-merges">Master as a collection of stable merges</h4>
-
 <p>The <strong>Master</strong> branch must be treated as your <strong>single branch of stability</strong>. After critical bug fixes and other minor modifications on the <strong>Release Candidate</strong> branch are complete and a release is imminent, you can <strong>merge</strong> into <strong>Master</strong>.</p>
-
 <p><strong>Master</strong> will <strong>only</strong> contain merges from <strong>Release Candidate</strong> branches. Each commit will be associated with a <strong>version tag</strong> prefixed by <em>v</em> and followed by the full version number (<em>semantic versioning</em>). Each commit/merge on Master is a stable version in <strong>production</strong>. Continuous integration pipeline must be set up to monitor <strong>Master</strong> and should be triggered on each merge to <strong>Master</strong>.</p>
-
-<p><img src="5.svg" alt="Fix on Release Candidate" /></p>
-
+<p><img src="5.svg" alt="Fix on Release Candidate"></p>
 <h4 id="fix-on-release-candidates">Fix on release candidates</h4>
-
 <p>Hot fixes in production are done on the <strong>Release Candidate branch that references the version in production</strong>. This deviates from <strong>GitFlow</strong> in that <em>hot fix</em> branches are not used. Once all the bug fixes are completed on the <strong>Release Candidate</strong> branch, the <strong>Release Candidate</strong> is then merged back to <strong>Master and Dev</strong> with a <strong>new</strong> version tag (<em>Patch</em>).</p>
-
-<p><img src="6.svg" alt="Rinse and repeat" /></p>
-
+<p><img src="6.svg" alt="Rinse and repeat"></p>
 <h4 id="rinse-and-repeat">Rinse and Repeat</h4>
-
 <p>When a new release has been decided by the team, a <strong>new Release Candidate</strong> is branched off from Dev. Once a <em>minor version</em> has been merged into Master, the previous <strong>Release Candidate</strong> branch becomes <strong>obsolete</strong> and may be safely deleted.</p>
-
 <h3 id="conclusion">Conclusion</h3>
-
 <p>This branching strategy ensures that the <strong>Dev</strong> branch is always cutting edge and at the tip of development and the <strong>Master</strong> branch is the source of truth and stability. This offers a clean and maintainable git repository since at any given time there are only <strong>three</strong> main branches. <strong>Continuous Integration</strong> and <strong>Continuous Deployment</strong> is made easy with this branching strategy as <strong>Release Candidate</strong> branches are prefixed with <em>rc</em> and the tip of <strong>Master</strong> is always the latest stable release.</p>
 
   </div>
@@ -142,7 +111,7 @@ Introduction This branching model is a recommendation to the existing GitFlow fo
   <p>
   &copy; 2019 Harry Lee.
   Powered by <a href="https://gohugo.io/">Hugo</a>
-  using the <a href="https://github.com/harryleesan/pulp/">pulp</a> theme.
+  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
   </p>
 </footer>
 

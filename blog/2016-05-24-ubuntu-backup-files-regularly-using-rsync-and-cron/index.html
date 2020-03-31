@@ -17,9 +17,10 @@
   
   
   
-  <link rel="stylesheet" href="https://harrylee.me/style.min.74c1d842fda3c5dcef37cb1e26934d4a205babfe7cbfca23903297bcab678581.css">
+  
+  <link rel="stylesheet" href="https://harrylee.me/style.min.5e3cee18517577961c70ad88917d12890b3f22161e887f8da699d860f7dfb0ec.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://harrylee.me/css/pulp.css">
+  <link href="https://harrylee.me/css/theme.css?1585635527" rel="stylesheet">
 
   
   
@@ -38,16 +39,13 @@ This post focuses on: rsync, expect and cron. To access the remote server, I&rsq
 <meta itemprop="name" content="Ubuntu: Backup files regularly using expect, rsync and Cron">
 <meta itemprop="description" content="Want to backup your remote files at regular intervals? This post is for you.
 This post focuses on: rsync, expect and cron. To access the remote server, I&rsquo;m assuming that you are using ssh (with password authentication) for that. If you use ftp or other protocols, you will have to tweak the instructions a bit. If you are using SSH with public key (well done!), you will have to tweak the rsync command to use public key.">
-
-
 <meta itemprop="datePublished" content="2016-05-24T16:07:47&#43;00:00" />
 <meta itemprop="dateModified" content="2016-05-24T16:07:47&#43;00:00" />
-<meta itemprop="wordCount" content="367">
+<meta itemprop="wordCount" content="366">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ubuntu: Backup files regularly using expect, rsync and Cron"/>
 <meta name="twitter:description" content="Want to backup your remote files at regular intervals? This post is for you.
 This post focuses on: rsync, expect and cron. To access the remote server, I&rsquo;m assuming that you are using ssh (with password authentication) for that. If you use ftp or other protocols, you will have to tweak the instructions a bit. If you are using SSH with public key (well done!), you will have to tweak the rsync command to use public key."/>
@@ -79,74 +77,56 @@ This post focuses on: rsync, expect and cron. To access the remote server, I&rsq
   
   <p class="date">May 24, 2016</p>
   
-  
   <div id="contentBody">
-    
-
-<p>Want to backup your remote files at regular intervals? This post is for you.</p>
-
+    <p>Want to backup your remote files at regular intervals? This post is for you.</p>
 <p>This post focuses on: <code>rsync</code>, <code>expect</code> and <code>cron</code>. To access the remote server, I&rsquo;m assuming that you are using <code>ssh</code> (with password authentication) for that. If you use <code>ftp</code> or other protocols, you will have to tweak the instructions a bit. If you are using <em>SSH</em> with public key (well done!), you will have to tweak the <strong>rsync</strong> command to use public key.</p>
-
-<!-- more -->
-
+<!-- raw HTML omitted -->
 <h3 id="background">Background</h3>
-
 <p>The idea is to use <code>rsync</code> to copy files from the remote server to your local repository. Since remote servers are normally <strong>protected by passwords</strong> (or private-public key pairs), we need a way for the terminal to enter the password for us. This is where <code>expect</code> comes in.</p>
-
 <blockquote>
 <p><strong>Expect</strong> is a natural and intuitive automation scripting language that operates in much the same way humans do when interacting with a system.</p>
 </blockquote>
-
 <p>So <code>expect</code> removes the need for human interaction when a password is needed. For a detailed way to use <code>expect</code> see <a href="http://www.admin-magazine.com/Articles/Automating-with-Expect-Scripts">Using Expect Scripts to Automate Tasks</a>.</p>
-
 <p>We then use <code>cron</code> to schedule automation of this task. See <a href="https://help.ubuntu.com/community/CronHowto">How To Cron</a>.</p>
-
 <h3 id="method">Method</h3>
-
 <ol>
-<li><p><strong>Create</strong> a new file in <code>~/Documents/</code>, <em>backup.exp</em>, with the contents below:</p>
+<li>
+<p><strong>Create</strong> a new file in <code>~/Documents/</code>, <em>backup.exp</em>, with the contents below:</p>
 
 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/expect -f
+</span><span style="color:#75715e"></span>
+set timeout <span style="color:#ae81ff">19900</span>
+set pass <span style="color:#e6db74">&#34;&lt;mypassword&gt;&#34;</span>
+spawn rsync -av -e ssh &lt;user&gt;@&lt;ip address&gt;:&lt;/home/user/remote&gt; &lt;<span style="color:#e6db74">&#34;/home/user/backup/remote&#34;</span>&gt;
+expect <span style="color:#e6db74">&#34;assword&#34;</span>
+sleep <span style="color:#ae81ff">2</span>
+send <span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">\r&#34;</span>
+expect -re <span style="color:#e6db74">&#34;total size is&#34;</span>
+expect -re <span style="color:#e6db74">&#34;</span>$<span style="color:#e6db74"> &#34;</span>
+puts <span style="color:#e6db74">&#34;Successfully backed up!&#34;</span>
 
-<pre><code class="language-bash">#!/usr/bin/expect -f
-
-set timeout 19900
-set pass &quot;&lt;mypassword&gt;&quot;
-spawn rsync -av -e ssh &lt;user&gt;@&lt;ip address&gt;:&lt;/home/user/remote&gt; &lt;&quot;/home/user/backup/remote&quot;&gt;
-expect &quot;assword&quot;
-sleep 2
-send &quot;$pass\r&quot;
-expect -re &quot;total size is&quot;
-expect -re &quot;$ &quot;
-puts &quot;Successfully backed up!&quot;
-
-</code></pre>
-
+</code></pre></div>
 
 <ul>
 <li>replace all the necessary parameters with <strong>your own credentials</strong>. (Basically everything encased between &lt; &gt;).</li>
-</ul></li>
-
-<li><p><strong>Change the permission</strong> of the file to be executable:</p>
-
-<pre><code class="language-bash">    $ sudo chmod +x ~/Documents/backup.exp
-</code></pre></li>
-
-<li><p><strong>Run</strong> cron:</p>
-
-<pre><code class="language-bash">    $ sudo crontab -e
-</code></pre></li>
-
-<li><p><strong>Place</strong> the following line at the end of the file.</p>
-
+</ul>
+</li>
+<li>
+<p><strong>Change the permission</strong> of the file to be executable:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo chmod +x ~/Documents/backup.exp
+</code></pre></div></li>
+<li>
+<p><strong>Run</strong> cron:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo crontab -e
+</code></pre></div></li>
+<li>
+<p><strong>Place</strong> the following line at the end of the file.</p>
 <pre><code>    00 06,12,18,00 * * * /home/user/Documents/backup.exp
-</code></pre>
-
-<p>This basically tells the server to execute the <em>backup.exp</em> script <strong>every 6 hours</strong>, <strong>every day</strong> at <em>6:00 AM</em>, <em>12:00 PM</em>, <em>18:00 PM</em> and <em>00:00 AM</em>. You can change the intervals however you see fit.</p></li>
+</code></pre><p>This basically tells the server to execute the <em>backup.exp</em> script <strong>every 6 hours</strong>, <strong>every day</strong> at <em>6:00 AM</em>, <em>12:00 PM</em>, <em>18:00 PM</em> and <em>00:00 AM</em>. You can change the intervals however you see fit.</p>
+</li>
 </ol>
-
 <h3 id="conclusion">Conclusion</h3>
-
 <p>This is really useful if you have your own file server with files that are created/modified <strong>regularly</strong>. Backing up these files consistently and frequently can give you peace of mind that your files are &ldquo;safer&rdquo; than when you do not have this in place.</p>
 
   </div>
@@ -154,7 +134,7 @@ puts &quot;Successfully backed up!&quot;
   <p>
   &copy; 2019 Harry Lee.
   Powered by <a href="https://gohugo.io/">Hugo</a>
-  using the <a href="https://github.com/harryleesan/pulp/">pulp</a> theme.
+  using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
   </p>
 </footer>
 
