@@ -6,7 +6,7 @@
     <description>Recent content on Harry Lee&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Aug 1988 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harrylee.me/index.xml" rel="self" type="application/rss+xml" />
     
@@ -95,12 +95,12 @@ Method   Unmount the drive that is connected already and remount to another fold
     </item>
     
     <item>
-      <title>Curriculum Vitae</title>
+      <title></title>
       <link>https://harrylee.me/cv/</link>
-      <pubDate>Sat, 27 Aug 1988 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harrylee.me/cv/</guid>
-      <description>Personal Information -- -- --  -- -- &amp;nbsp; -- -- -- Surname / First name  -- -- LEE, Harry -- -- -- -- --  -- -- &amp;nbsp; -- -- -- About Myself   &amp;nbsp;    I am a DevSecOps evangelist and an engineer who is passionate about technology and gadgets. My expertise is in designing and implementing cloud-native solutions, propagating the DevOps culture and providing DevOps training across the organisation.</description>
+      <description></description>
     </item>
     
   </channel>
