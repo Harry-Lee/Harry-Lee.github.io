@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Server on Harry Lee&#39;s Blog</title>
+    <title>Server on Harry Lee</title>
     <link>https://harrylee.me/categories/server/</link>
-    <description>Recent content in Server on Harry Lee&#39;s Blog</description>
+    <description>Recent content in Server on Harry Lee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 24 May 2016 16:07:47 +0000</lastBuildDate>
