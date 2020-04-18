@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="map[]" />
+  <meta name="author" content="Harry Lee" />
   <link rel="shortcut icon" type="image/x-icon" href="https://harrylee.me/img/favicon.png">
 
   
@@ -18,9 +18,13 @@
   
   
   
-  <link rel="stylesheet" href="https://harrylee.me/style.min.5e3cee18517577961c70ad88917d12890b3f22161e887f8da699d860f7dfb0ec.css">
+  <link rel="stylesheet" href="https://harrylee.me/style.min.6f642c5866835106e8a19b94463576436c99be9e41a8714ab3df3daa95f6bf90.css" integrity="sha256-b2QsWGaDUQbooZuURjV2Q2yZvp5BqHFKs989qpX2v5A=">
+  
+  
+  
+  <link rel="stylesheet" href="https://harrylee.me/style-dark.min.0a647fb6c07e04b77b54fa0515d0a683d39ecdb251dba960fe1f966f7ff36fc2.css" media="(prefers-color-scheme: dark)" integrity="sha256-CmR/tsB&#43;BLd7VPoFFdCmg9OezbJR26lg/h&#43;Wb3/zb8I=">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://harrylee.me/css/theme.css?1587055174" rel="stylesheet">
+  <link href="https://harrylee.me/css/theme.css?1587209771" rel="stylesheet">
 
   
   
@@ -41,7 +45,8 @@ Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up a
 
 
 
-<meta itemprop="keywords" content="Docker,L2TP,IPsec,VPN," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="docker,vpn,network," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://harrylee.me//img/avatar.png"/>
 <meta name="twitter:title" content="Docker: Create your own IPsec/L2TP VPN container"/>
 <meta name="twitter:description" content="To configure your own VPN hosted on your own VPS is not difficult at all, especially when there are numerous configuration scripts lying around the internet. We will set up such a VPN using Docker hosted on a Microsoft Azure VM.
 Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up as me, as the configurations should be the same with any VM (Virtual Machine) running Docker (that&rsquo;s the beauty of Docker!"/>
@@ -63,19 +68,45 @@ Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up a
   <header>
   
   <div class="avatar">
-    <img class="avatarMask" src="https://harrylee.me//img/avatar.png">
-    <a href="https://harrylee.me/"><img src="https://harrylee.me//img/avatar-border.svg" }}></a>
+    <img class="avatarMask" src="https://harrylee.me//img/avatar.png" alt="">
+    <a href="https://harrylee.me/"><img class="avatar-border" src="https://harrylee.me//img/avatar-border.svg" alt=""></a>
   </div>
   
   <h2><a class="author" href="https://harrylee.me/">Harry Lee</a></h2>
 </header>
 
   
+  
+  
   <p class="date">June 25, 2016</p>
+  
+  
+  
+  <div id="tags">
+    <ul>
+      
+        
+        
+          <li><a href="https://harrylee.me/tags/docker/">docker</a></li>
+        
+      
+        
+        
+          <li><a href="https://harrylee.me/tags/vpn/">vpn</a></li>
+        
+      
+        
+        
+          <li><a href="https://harrylee.me/tags/network/">network</a></li>
+        
+      
+    </ul>
+  </div>
+  
   
   <div id="contentBody">
     <p>To configure your own <strong>VPN</strong> hosted on your own <strong>VPS</strong> is not difficult at all, especially when there are <a href="https://github.com/hwdsl2/setup-ipsec-vpn">numerous configuration scripts</a> lying around the internet. We will set up such a <strong>VPN</strong> using <strong>Docker</strong> hosted on a <strong>Microsoft Azure VM</strong>.</p>
-<!-- raw HTML omitted -->
+<!-- more -->
 <h2 id="set-up">Set Up</h2>
 <p>Listed below is my set up. You don&rsquo;t have to use the exact set up as me, as the configurations should be the same with any VM (Virtual Machine) running Docker (that&rsquo;s the beauty of Docker!).</p>
 <ul>
@@ -163,7 +194,7 @@ VPN_PASSWORD=&lt;VPN Password&gt;
   </div>
   <footer>
   <p>
-  &copy; 2019 Harry Lee.
+  &copy; 2020 Harry Lee.
   Powered by <a href="https://gohugo.io/">Hugo</a>
   using the <a href="https://github.com/koirand/pulp/">pulp</a> theme.
   </p>

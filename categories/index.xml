@@ -13,91 +13,64 @@
     
     <item>
       <title>Git</title>
-      <link>https://harrylee.me/categories/git/</link>
+      <link>https://harrylee.me/categories/git/index.json</link>
       <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://harrylee.me/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software</title>
-      <link>https://harrylee.me/categories/software/</link>
-      <pubDate>Fri, 26 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://harrylee.me/categories/software/</guid>
+      <guid>https://harrylee.me/categories/git/index.json</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://harrylee.me/categories/docker/</link>
+      <link>https://harrylee.me/categories/docker/index.json</link>
       <pubDate>Tue, 23 Aug 2016 16:05:02 +0000</pubDate>
       
-      <guid>https://harrylee.me/categories/docker/</guid>
+      <guid>https://harrylee.me/categories/docker/index.json</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Docker Microsoft Azure</title>
-      <link>https://harrylee.me/categories/docker-microsoft-azure/</link>
+      <title>Microsoft Azure</title>
+      <link>https://harrylee.me/categories/microsoft-azure/index.json</link>
       <pubDate>Tue, 23 Aug 2016 16:05:02 +0000</pubDate>
       
-      <guid>https://harrylee.me/categories/docker-microsoft-azure/</guid>
+      <guid>https://harrylee.me/categories/microsoft-azure/index.json</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Ubuntu</title>
-      <link>https://harrylee.me/categories/ubuntu/</link>
-      <pubDate>Tue, 23 Aug 2016 16:05:02 +0000</pubDate>
+      <title>IDE</title>
+      <link>https://harrylee.me/categories/ide/index.json</link>
+      <pubDate>Mon, 20 Jun 2016 18:54:58 +0000</pubDate>
       
-      <guid>https://harrylee.me/categories/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VPN</title>
-      <link>https://harrylee.me/categories/vpn/</link>
-      <pubDate>Sat, 25 Jun 2016 10:25:14 +0000</pubDate>
-      
-      <guid>https://harrylee.me/categories/vpn/</guid>
+      <guid>https://harrylee.me/categories/ide/index.json</guid>
       <description></description>
     </item>
     
     <item>
       <title>VirtualBox</title>
-      <link>https://harrylee.me/categories/virtualbox/</link>
+      <link>https://harrylee.me/categories/virtualbox/index.json</link>
       <pubDate>Mon, 20 Jun 2016 18:54:58 +0000</pubDate>
       
-      <guid>https://harrylee.me/categories/virtualbox/</guid>
+      <guid>https://harrylee.me/categories/virtualbox/index.json</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Terminal</title>
-      <link>https://harrylee.me/categories/terminal/</link>
+      <title>Security</title>
+      <link>https://harrylee.me/categories/security/index.json</link>
       <pubDate>Tue, 31 May 2016 18:01:55 +0000</pubDate>
       
-      <guid>https://harrylee.me/categories/terminal/</guid>
+      <guid>https://harrylee.me/categories/security/index.json</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Web Server</title>
-      <link>https://harrylee.me/categories/web-server/</link>
-      <pubDate>Tue, 31 May 2016 18:01:55 +0000</pubDate>
-      
-      <guid>https://harrylee.me/categories/web-server/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Server</title>
-      <link>https://harrylee.me/categories/server/</link>
+      <title>Linux</title>
+      <link>https://harrylee.me/categories/linux/index.json</link>
       <pubDate>Tue, 24 May 2016 16:07:47 +0000</pubDate>
       
-      <guid>https://harrylee.me/categories/server/</guid>
+      <guid>https://harrylee.me/categories/linux/index.json</guid>
       <description></description>
     </item>
     

@@ -13,12 +13,12 @@
   </url>
   
   <url>
-    <loc>https://harrylee.me/tags/git/</loc>
+    <loc>https://harrylee.me/categories/git/</loc>
     <lastmod>2017-05-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://harrylee.me/categories/git/</loc>
+    <loc>https://harrylee.me/tags/git/</loc>
     <lastmod>2017-05-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,17 +28,7 @@
   </url>
   
   <url>
-    <loc>https://harrylee.me/tags/gitflow/</loc>
-    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://harrylee.me/</loc>
-    <lastmod>2017-05-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harrylee.me/categories/software/</loc>
     <lastmod>2017-05-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -48,8 +38,8 @@
   </url>
   
   <url>
-    <loc>https://harrylee.me/tags/docker/</loc>
-    <lastmod>2016-08-30T10:22:23+00:00</lastmod>
+    <loc>https://harrylee.me/tags/azure/</loc>
+    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
   </url>
   
   <url>
@@ -58,18 +48,8 @@
   </url>
   
   <url>
-    <loc>https://harrylee.me/tags/docker-machine-microsoft-azure/</loc>
-    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harrylee.me/categories/docker-microsoft-azure/</loc>
-    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harrylee.me/tags/docker-swarm/</loc>
-    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
+    <loc>https://harrylee.me/tags/docker/</loc>
+    <lastmod>2016-08-30T10:22:23+00:00</lastmod>
   </url>
   
   <url>
@@ -78,8 +58,8 @@
   </url>
   
   <url>
-    <loc>https://harrylee.me/categories/ubuntu/</loc>
-    <lastmod>2016-08-30T10:22:23+00:00</lastmod>
+    <loc>https://harrylee.me/categories/microsoft-azure/</loc>
+    <lastmod>2016-08-23T16:05:02+00:00</lastmod>
   </url>
   
   <url>
@@ -88,22 +68,12 @@
   </url>
   
   <url>
-    <loc>https://harrylee.me/tags/ipsec/</loc>
-    <lastmod>2016-08-30T10:22:23+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harrylee.me/tags/l2tp/</loc>
+    <loc>https://harrylee.me/tags/network/</loc>
     <lastmod>2016-08-30T10:22:23+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://harrylee.me/tags/vpn/</loc>
-    <lastmod>2016-08-30T10:22:23+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harrylee.me/categories/vpn/</loc>
     <lastmod>2016-08-30T10:22:23+00:00</lastmod>
   </url>
   
@@ -118,6 +88,11 @@
   </url>
   
   <url>
+    <loc>https://harrylee.me/categories/ide/</loc>
+    <lastmod>2016-06-20T18:54:58+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://harrylee.me/tags/phpstorm/</loc>
     <lastmod>2016-06-20T18:54:58+00:00</lastmod>
   </url>
@@ -128,22 +103,32 @@
   </url>
   
   <url>
+    <loc>https://harrylee.me/tags/certbot/</loc>
+    <lastmod>2016-05-31T18:01:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/categories/security/</loc>
+    <lastmod>2016-05-31T18:01:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harrylee.me/tags/ssl/</loc>
+    <lastmod>2016-05-31T18:01:55+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://harrylee.me/blog/2016-05-31-ssl-how-to-generate-free-ssl-certificates-with-certbot-let-s-encrypt/</loc>
     <lastmod>2016-05-31T18:01:55+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://harrylee.me/categories/terminal/</loc>
-    <lastmod>2016-05-31T18:01:55+00:00</lastmod>
+    <loc>https://harrylee.me/categories/linux/</loc>
+    <lastmod>2016-05-24T16:07:47+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://harrylee.me/categories/web-server/</loc>
-    <lastmod>2016-05-31T18:01:55+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harrylee.me/categories/server/</loc>
+    <loc>https://harrylee.me/tags/ubuntu/</loc>
     <lastmod>2016-05-24T16:07:47+00:00</lastmod>
   </url>
   
