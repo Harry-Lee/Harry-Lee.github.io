@@ -18,13 +18,13 @@
   
   
   
-  <link rel="stylesheet" href="https://harrylee.me/style.min.6f642c5866835106e8a19b94463576436c99be9e41a8714ab3df3daa95f6bf90.css" integrity="sha256-b2QsWGaDUQbooZuURjV2Q2yZvp5BqHFKs989qpX2v5A=">
+  <link rel="stylesheet" href="https://harrylee.me/style.min.39acacc5d2051426f655a6b7fbf4786fbd0fd8fffd09322c9b497ef0f7439b3f.css" integrity="sha256-OaysxdIFFCb2Vaa3&#43;/R4b70P2P/9CTIsm0l&#43;8PdDmz8=">
   
   
   
   <link rel="stylesheet" href="https://harrylee.me/style-dark.min.0a647fb6c07e04b77b54fa0515d0a683d39ecdb251dba960fe1f966f7ff36fc2.css" media="(prefers-color-scheme: dark)" integrity="sha256-CmR/tsB&#43;BLd7VPoFFdCmg9OezbJR26lg/h&#43;Wb3/zb8I=">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://harrylee.me/css/theme.css?1590648514" rel="stylesheet">
+  <link href="https://harrylee.me/css/theme.css?1634884233" rel="stylesheet">
 
   
   
@@ -33,18 +33,15 @@
 <meta property="og:description" content="To configure your own VPN hosted on your own VPS is not difficult at all, especially when there are numerous configuration scripts lying around the internet. We will set up such a VPN using Docker hosted on a Microsoft Azure VM.
 Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up as me, as the configurations should be the same with any VM (Virtual Machine) running Docker (that&rsquo;s the beauty of Docker!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harrylee.me/blog/2016-06-25-docker-create-your-own-ipsec-l2tp-vpn-container/" />
+<meta property="og:url" content="https://harrylee.me/blog/2016-06-25-docker-create-your-own-ipsec-l2tp-vpn-container/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2016-06-25T10:25:14+00:00" />
 <meta property="article:modified_time" content="2016-08-30T10:22:23+00:00" />
+
 <meta itemprop="name" content="Docker: Create your own IPsec/L2TP VPN container">
 <meta itemprop="description" content="To configure your own VPN hosted on your own VPS is not difficult at all, especially when there are numerous configuration scripts lying around the internet. We will set up such a VPN using Docker hosted on a Microsoft Azure VM.
-Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up as me, as the configurations should be the same with any VM (Virtual Machine) running Docker (that&rsquo;s the beauty of Docker!">
-<meta itemprop="datePublished" content="2016-06-25T10:25:14&#43;00:00" />
-<meta itemprop="dateModified" content="2016-08-30T10:22:23&#43;00:00" />
+Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up as me, as the configurations should be the same with any VM (Virtual Machine) running Docker (that&rsquo;s the beauty of Docker!"><meta itemprop="datePublished" content="2016-06-25T10:25:14+00:00" />
+<meta itemprop="dateModified" content="2016-08-30T10:22:23+00:00" />
 <meta itemprop="wordCount" content="434">
-
-
-
 <meta itemprop="keywords" content="docker,vpn,network," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:image" content="https://harrylee.me//img/avatar.png"/>
 <meta name="twitter:title" content="Docker: Create your own IPsec/L2TP VPN container"/>
@@ -131,11 +128,11 @@ Set Up Listed below is my set up. You don&rsquo;t have to use the exact set up a
 <ol>
 <li>
 <p>Pull the image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ docker pull hwdsl2/ipsec-vpn-server
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ docker pull hwdsl2/ipsec-vpn-server
 </code></pre></div></li>
 <li>
 <p>Create an <em>environment file</em> in your home directory e.g. (<em>/home/dockeruser/vpn.env</em>) with the following content:</p>
-<pre><code>VPN_IPSEC_PSK=&lt;IPsec pre-shared key&gt;
+<pre tabindex="0"><code>VPN_IPSEC_PSK=&lt;IPsec pre-shared key&gt;
 VPN_USER=&lt;VPN Username&gt;
 VPN_PASSWORD=&lt;VPN Password&gt;
 </code></pre></li>
@@ -147,11 +144,11 @@ VPN_PASSWORD=&lt;VPN Password&gt;
 <ol start="3">
 <li>
 <p>Load the IPsec <code>NETKEY</code> kernel module:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo modprobe af_key
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo modprobe af_key
 </code></pre></div></li>
 <li>
 <p>Change directory to your home directory and execute below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --name ipsec-vpn-server <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --env-file ./vpn.env <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    -p 500:500/udp <span style="color:#ae81ff">\

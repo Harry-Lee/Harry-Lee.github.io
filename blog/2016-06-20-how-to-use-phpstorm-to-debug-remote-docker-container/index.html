@@ -18,13 +18,13 @@
   
   
   
-  <link rel="stylesheet" href="https://harrylee.me/style.min.6f642c5866835106e8a19b94463576436c99be9e41a8714ab3df3daa95f6bf90.css" integrity="sha256-b2QsWGaDUQbooZuURjV2Q2yZvp5BqHFKs989qpX2v5A=">
+  <link rel="stylesheet" href="https://harrylee.me/style.min.39acacc5d2051426f655a6b7fbf4786fbd0fd8fffd09322c9b497ef0f7439b3f.css" integrity="sha256-OaysxdIFFCb2Vaa3&#43;/R4b70P2P/9CTIsm0l&#43;8PdDmz8=">
   
   
   
   <link rel="stylesheet" href="https://harrylee.me/style-dark.min.0a647fb6c07e04b77b54fa0515d0a683d39ecdb251dba960fe1f966f7ff36fc2.css" media="(prefers-color-scheme: dark)" integrity="sha256-CmR/tsB&#43;BLd7VPoFFdCmg9OezbJR26lg/h&#43;Wb3/zb8I=">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://harrylee.me/css/theme.css?1590648514" rel="stylesheet">
+  <link href="https://harrylee.me/css/theme.css?1634884233" rel="stylesheet">
 
   
   
@@ -33,18 +33,15 @@
 <meta property="og:description" content="There are many tools that can be used for debugging when developing a web app using PHP. These debugging tools are very useful in a local development environment, you can view the states of variables, indicate line breaks etc. However, these tools become difficult to use when you decide to include Docker in your workflow.
 This post outlines the configuration needed to incorporate the debugging power of the PhpStorm IDE to your PHP based web app." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harrylee.me/blog/2016-06-20-how-to-use-phpstorm-to-debug-remote-docker-container/" />
+<meta property="og:url" content="https://harrylee.me/blog/2016-06-20-how-to-use-phpstorm-to-debug-remote-docker-container/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2016-06-20T18:54:58+00:00" />
 <meta property="article:modified_time" content="2016-06-20T18:54:58+00:00" />
+
 <meta itemprop="name" content="Docker: How to use PhpStorm to debug remote Docker container for Web Development using Xdebug">
 <meta itemprop="description" content="There are many tools that can be used for debugging when developing a web app using PHP. These debugging tools are very useful in a local development environment, you can view the states of variables, indicate line breaks etc. However, these tools become difficult to use when you decide to include Docker in your workflow.
-This post outlines the configuration needed to incorporate the debugging power of the PhpStorm IDE to your PHP based web app.">
-<meta itemprop="datePublished" content="2016-06-20T18:54:58&#43;00:00" />
-<meta itemprop="dateModified" content="2016-06-20T18:54:58&#43;00:00" />
+This post outlines the configuration needed to incorporate the debugging power of the PhpStorm IDE to your PHP based web app."><meta itemprop="datePublished" content="2016-06-20T18:54:58+00:00" />
+<meta itemprop="dateModified" content="2016-06-20T18:54:58+00:00" />
 <meta itemprop="wordCount" content="553">
-
-
-
 <meta itemprop="keywords" content="docker,phpstorm,debug," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:image" content="https://harrylee.me//img/avatar.png"/>
 <meta name="twitter:title" content="Docker: How to use PhpStorm to debug remote Docker container for Web Development using Xdebug"/>
@@ -130,7 +127,7 @@ This post outlines the configuration needed to incorporate the debugging power o
 <ol>
 <li>
 <p>Create your own <strong>Dockerfile</strong> with your own configuration and add the below to install <strong>Xdebug</strong>:</p>
-<pre><code>    FROM php:5
+<pre tabindex="0"><code>    FROM php:5
     ...
     RUN yes | pecl install xdebug \
         &amp;&amp; echo &quot;zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)&quot; &gt; /usr/local/etc/php/conf.d/xdebug.ini \

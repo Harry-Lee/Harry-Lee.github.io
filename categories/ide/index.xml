@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IDE on Harry Lee</title>
+    <link>https://harrylee.me/categories/ide/</link>
+    <description>Recent content in IDE on Harry Lee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jun 2016 18:54:58 +0000</lastBuildDate><atom:link href="https://harrylee.me/categories/ide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker: How to use PhpStorm to debug remote Docker container for Web Development using Xdebug</title>
+      <link>https://harrylee.me/blog/2016-06-20-how-to-use-phpstorm-to-debug-remote-docker-container/</link>
+      <pubDate>Mon, 20 Jun 2016 18:54:58 +0000</pubDate>
+      
+      <guid>https://harrylee.me/blog/2016-06-20-how-to-use-phpstorm-to-debug-remote-docker-container/</guid>
+      <description>There are many tools that can be used for debugging when developing a web app using PHP. These debugging tools are very useful in a local development environment, you can view the states of variables, indicate line breaks etc. However, these tools become difficult to use when you decide to include Docker in your workflow.
+This post outlines the configuration needed to incorporate the debugging power of the PhpStorm IDE to your PHP based web app.</description>
+    </item>
+    
+  </channel>
+</rss>

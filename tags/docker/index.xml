@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on Harry Lee</title>
+    <title>docker on Harry Lee</title>
     <link>https://harrylee.me/tags/docker/</link>
-    <description>Recent content in Docker on Harry Lee</description>
+    <description>Recent content in docker on Harry Lee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Aug 2016 16:05:02 +0000</lastBuildDate>
-    
-	<atom:link href="https://harrylee.me/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 23 Aug 2016 16:05:02 +0000</lastBuildDate><atom:link href="https://harrylee.me/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker: Docker Swarm with Docker Machine Quick Setup Guide</title>
       <link>https://harrylee.me/blog/2016-08-23-docker-docker-swarm-with-docker-machine-quick-setup-guide/</link>

@@ -1,0 +1,64 @@
+[
+    {
+        "ref": "https://harrylee.me/categories/git/",
+        "title": "Git",
+        "section": "categories",
+        "tags": null,
+        "date" : "2017.05.26",
+        "body": ""
+    }
+,
+    {
+        "ref": "https://harrylee.me/categories/docker/",
+        "title": "Docker",
+        "section": "categories",
+        "tags": null,
+        "date" : "2016.08.23",
+        "body": ""
+    }
+,
+    {
+        "ref": "https://harrylee.me/categories/microsoft-azure/",
+        "title": "Microsoft Azure",
+        "section": "categories",
+        "tags": null,
+        "date" : "2016.08.23",
+        "body": ""
+    }
+,
+    {
+        "ref": "https://harrylee.me/categories/ide/",
+        "title": "IDE",
+        "section": "categories",
+        "tags": null,
+        "date" : "2016.06.20",
+        "body": ""
+    }
+,
+    {
+        "ref": "https://harrylee.me/categories/virtualbox/",
+        "title": "VirtualBox",
+        "section": "categories",
+        "tags": null,
+        "date" : "2016.06.20",
+        "body": ""
+    }
+,
+    {
+        "ref": "https://harrylee.me/categories/security/",
+        "title": "Security",
+        "section": "categories",
+        "tags": null,
+        "date" : "2016.05.31",
+        "body": ""
+    }
+,
+    {
+        "ref": "https://harrylee.me/categories/linux/",
+        "title": "Linux",
+        "section": "categories",
+        "tags": null,
+        "date" : "2016.05.24",
+        "body": ""
+    }
+]

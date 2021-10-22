@@ -18,13 +18,13 @@
   
   
   
-  <link rel="stylesheet" href="https://harrylee.me/style.min.6f642c5866835106e8a19b94463576436c99be9e41a8714ab3df3daa95f6bf90.css" integrity="sha256-b2QsWGaDUQbooZuURjV2Q2yZvp5BqHFKs989qpX2v5A=">
+  <link rel="stylesheet" href="https://harrylee.me/style.min.39acacc5d2051426f655a6b7fbf4786fbd0fd8fffd09322c9b497ef0f7439b3f.css" integrity="sha256-OaysxdIFFCb2Vaa3&#43;/R4b70P2P/9CTIsm0l&#43;8PdDmz8=">
   
   
   
   <link rel="stylesheet" href="https://harrylee.me/style-dark.min.0a647fb6c07e04b77b54fa0515d0a683d39ecdb251dba960fe1f966f7ff36fc2.css" media="(prefers-color-scheme: dark)" integrity="sha256-CmR/tsB&#43;BLd7VPoFFdCmg9OezbJR26lg/h&#43;Wb3/zb8I=">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://harrylee.me/css/theme.css?1590648514" rel="stylesheet">
+  <link href="https://harrylee.me/css/theme.css?1634884233" rel="stylesheet">
 
   
   
@@ -32,17 +32,14 @@
   <meta property="og:title" content="Docker: Docker Swarm with Docker Machine Quick Setup Guide" />
 <meta property="og:description" content="Docker already has an official documentation with tutorials and examples on how to go about setting up your own Docker Swarm nodes and cluster. This post is intended for those who have a fundamental grasp on Docker and are too lazy to read the documents. This post includes minimal explanation and focuses primarily on the configuration. It is written to be a series of instructions rather than a full fledged post." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harrylee.me/blog/2016-08-23-docker-docker-swarm-with-docker-machine-quick-setup-guide/" />
+<meta property="og:url" content="https://harrylee.me/blog/2016-08-23-docker-docker-swarm-with-docker-machine-quick-setup-guide/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2016-08-23T16:05:02+00:00" />
 <meta property="article:modified_time" content="2016-08-23T16:05:02+00:00" />
+
 <meta itemprop="name" content="Docker: Docker Swarm with Docker Machine Quick Setup Guide">
-<meta itemprop="description" content="Docker already has an official documentation with tutorials and examples on how to go about setting up your own Docker Swarm nodes and cluster. This post is intended for those who have a fundamental grasp on Docker and are too lazy to read the documents. This post includes minimal explanation and focuses primarily on the configuration. It is written to be a series of instructions rather than a full fledged post.">
-<meta itemprop="datePublished" content="2016-08-23T16:05:02&#43;00:00" />
-<meta itemprop="dateModified" content="2016-08-23T16:05:02&#43;00:00" />
+<meta itemprop="description" content="Docker already has an official documentation with tutorials and examples on how to go about setting up your own Docker Swarm nodes and cluster. This post is intended for those who have a fundamental grasp on Docker and are too lazy to read the documents. This post includes minimal explanation and focuses primarily on the configuration. It is written to be a series of instructions rather than a full fledged post."><meta itemprop="datePublished" content="2016-08-23T16:05:02+00:00" />
+<meta itemprop="dateModified" content="2016-08-23T16:05:02+00:00" />
 <meta itemprop="wordCount" content="1333">
-
-
-
 <meta itemprop="keywords" content="docker,azure," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:image" content="https://harrylee.me//img/avatar.png"/>
 <meta name="twitter:title" content="Docker: Docker Swarm with Docker Machine Quick Setup Guide"/>
@@ -108,7 +105,7 @@
 <h2 id="a-namedockermachineazurea-docker-machine-azure"><a name="dockerMachineAzure"></a> Docker Machine (Azure)</h2>
 <p>To use <strong>Docker Machine</strong> to provision hosts on <em>Micorsoft Azure</em>, first make sure that you have the correct <em>subscription ID</em> for your <em>Azure</em> account.</p>
 <p>Execute:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-machine create --driver azure <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-machine create --driver azure <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --azure-subscription-id xxxx-xxxx-xxxx-xxxx <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --azure-image canonical:UbuntuServer:16.04.0-LTS:latest <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --azure-location eastus <span style="color:#ae81ff">\
@@ -117,9 +114,9 @@
 </span><span style="color:#ae81ff"></span>  --azure-open-port <span style="color:#ae81ff">80</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  dockertemp1
 </code></pre></div><p>To get the latest <em>osImage</em> for the VM, use <strong>Azure CLI</strong> and execute:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ azure vm image list-skus
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ azure vm image list-skus
 </code></pre></div><p>This will return :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">info:    Executing command vm image list-skus
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">info:    Executing command vm image list-skus
 Location: eastus
 Publisher: canonical
 Offer: ubuntuserver
@@ -148,7 +145,7 @@ data:    canonical  ubuntuserver  14.04-beta         eastus
 <div class="notices note" ><p>The machine that is doing the deploying will be referred to as the <em>deployment machine</em> and the machine that is going to be deployed is the <em>host</em>.</p>
 </div>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-machine create <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker-machine create <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --driver generic <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --generic-ip-address<span style="color:#f92672">=</span>​&lt;ip address&gt;​ <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --generic-ssh-key ~/.ssh/id_rsa <span style="color:#ae81ff">\
@@ -170,10 +167,10 @@ data:    canonical  ubuntuserver  14.04-beta         eastus
 <a href="#hostedDiscoveryBackend">Hosted Discovery Backend Method (Consul)</a></p>
 <h3 id="a-nametokenmethoda-token"><a name="tokenMethod"></a> Token</h3>
 <p>To install <em>Swarm</em> on the <strong>swarm master</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run --rm swarm create
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run --rm swarm create
 </code></pre></div><p>Take note of the last line which is a <strong>token</strong> (cluster ID). <strong>Copy</strong> to a secure location. It will look something like: <code>81a20406f6258ab0cad7ceb5768daeac</code>.</p>
 <p>Then install <em>Swarm</em> on the other <strong>nodes (hosts)</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --restart<span style="color:#f92672">=</span>always swarm join <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --addr<span style="color:#f92672">=</span>&lt;ip address&gt;:2376 <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  token://&lt;token&gt;
@@ -183,21 +180,21 @@ data:    canonical  ubuntuserver  14.04-beta         eastus
 </ul>
 <p>Do the same for <strong>every</strong> host.</p>
 <p>To manage the swarm from the Swarm master:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d swarm manage token://&lt;token&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d swarm manage token://&lt;token&gt;
 </code></pre></div><p>To see if the nodes are <strong>connected</strong> in the swarm:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run --rm swarm list token://&lt;token&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run --rm swarm list token://&lt;token&gt;
 </code></pre></div><h3 id="a-namehosteddiscoverybackenda-hosted-discovery-backend"><a name="hostedDiscoveryBackend"></a> Hosted Discovery Backend</h3>
 <h4 id="install-consul">Install Consul</h4>
 <p>If using the <em>token</em> method is not desired, you can use your <strong>own discovery key store</strong>. <em>Consul</em> can be used as a <strong>key:value store</strong> which will act as our discovery backend service. Normally this should be on an <strong>independent node</strong>, so that downtime of your cluster does not bring down this service too.</p>
 <p>Set up <em>Consul</em>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ docker run -d -p 8500:8500 --name<span style="color:#f92672">=</span>consul progrium/consul -server -bootstrap
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ docker run -d -p 8500:8500 --name<span style="color:#f92672">=</span>consul progrium/consul -server -bootstrap
 </code></pre></div><ul>
 <li>This will start a <em>Consul</em> container that exposes port <strong>8500</strong> for the service.</li>
 </ul>
 <p>Now we can use <em>Consul</em> to keep track of all the nodes in the swarm instead of the <em>token</em>.</p>
 <h4 id="join-swarm">Join Swarm</h4>
 <p>Now we need to add <strong>all nodes</strong> into the swarm. On <strong>each</strong> node/host, run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --restart<span style="color:#f92672">=</span>always <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --name swarm-agent swarm:1.0.0 join <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --advertise &lt;node ip&gt;:2376 <span style="color:#ae81ff">\
@@ -209,7 +206,7 @@ data:    canonical  ubuntuserver  14.04-beta         eastus
 <h4 id="swarm-master">Swarm Master</h4>
 <p>Once all nodes are added to the swarm, we need a way to control and manage the nodes. <strong>Swarm master</strong> does exactly this. Run swarm master on an existing node or an independent node (recommended).</p>
 <p>To configure the <strong>Swarm master</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -d <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --restart<span style="color:#f92672">=</span>always <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --name swarm-agent-master <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --tlsverify <span style="color:#ae81ff">\
@@ -237,13 +234,13 @@ data:    canonical  ubuntuserver  14.04-beta         eastus
 </li>
 </ul>
 <p>To attach to the <strong>Swarm master</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker -H tcp://&lt;ip address&gt;:3376 info
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker -H tcp://&lt;ip address&gt;:3376 info
 </code></pre></div><p>You can change the <code>DOCKER_HOST</code> environment variable if you don&rsquo;t want to type <code>-H &lt;ip address&gt;:&lt;port&gt;</code> all the time.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ export DOCKER_HOST<span style="color:#f92672">=</span>tcp://&lt;ip address&gt;:3376
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ export DOCKER_HOST<span style="color:#f92672">=</span>tcp://&lt;ip address&gt;:3376
 </code></pre></div><h2 id="a-namedockermachineswarmgenerica-docker-machine-swarm-generic"><a name="dockerMachineSwarmGeneric"></a> Docker Machine Swarm (Generic)</h2>
 <p>This section outlines the creation of a swarm using <strong>Docker Machine</strong>. You should have a <strong>discovery backend</strong> configured before starting this section. See <a href="#hostedDiscoveryBackend">Hosted Discovery Backend</a> on how to configure a <strong>Consul</strong> discovery backend.</p>
 <p>To configure the <strong>Swarm Master</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-machine create <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-machine create <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--driver generic <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--generic-ip-address<span style="color:#f92672">=</span>​&lt;ip address&gt;​ <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--generic-ssh-key ~/.ssh/id_rsa <span style="color:#ae81ff">\
@@ -262,7 +259,7 @@ data:    canonical  ubuntuserver  14.04-beta         eastus
 </li>
 </ul>
 <p>To configure the <strong>Swarm Agent</strong> (simply remove <code>--swarm-master</code>):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-machine create <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-machine create <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--driver generic <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--generic-ip-address<span style="color:#f92672">=</span>​&lt;ip address&gt;​ <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--generic-ssh-key ~/.ssh/id_rsa <span style="color:#ae81ff">\
@@ -273,7 +270,7 @@ data:    canonical  ubuntuserver  14.04-beta         eastus
 </span><span style="color:#ae81ff"></span>--engine-opt<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;cluster-advertise=&lt;ip address&gt;:2376&#34;</span>
 &lt;machine name&gt;
 </code></pre></div><p>When you run <code>docker-machine ls</code>, you should now see some values in the <code>swarm column</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NAME           ACTIVE   DRIVER       STATE     URL                         SWARM              DOCKER    ERRORS
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NAME           ACTIVE   DRIVER       STATE     URL                         SWARM              DOCKER    ERRORS
 dockera        -        generic      Running   tcp://40.76.49.229:2376     dockera <span style="color:#f92672">(</span>master<span style="color:#f92672">)</span>   v1.11.1
 dockerb        *        generic      Running   tcp://40.76.35.249:2376     dockera            v1.11.1
 dockerconsul   -        generic      Running   tcp://104.41.139.22:2376                       v1.11.1
@@ -282,14 +279,14 @@ dockerconsul   -        generic      Running   tcp://104.41.139.22:2376         
 <ol>
 <li>Set your docker machine to point to swarm master:</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ eval <span style="color:#66d9ef">$(</span>docker-machine env --swarm dockera<span style="color:#66d9ef">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ eval <span style="color:#66d9ef">$(</span>docker-machine env --swarm dockera<span style="color:#66d9ef">)</span>
 </code></pre></div><ol start="2">
 <li>
 <p>Check if you are in the swarm environment by executing <code>docker info</code>, you should see all the connected nodes.</p>
 </li>
 <li>
 <p>Create your <code>overlay</code> network:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker network create <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker network create <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--driver overlay <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>--subnet 10.0.9.0/24 &lt;network name&gt;
 </code></pre></div><ul>

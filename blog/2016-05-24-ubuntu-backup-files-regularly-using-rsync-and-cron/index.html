@@ -18,13 +18,13 @@
   
   
   
-  <link rel="stylesheet" href="https://harrylee.me/style.min.6f642c5866835106e8a19b94463576436c99be9e41a8714ab3df3daa95f6bf90.css" integrity="sha256-b2QsWGaDUQbooZuURjV2Q2yZvp5BqHFKs989qpX2v5A=">
+  <link rel="stylesheet" href="https://harrylee.me/style.min.39acacc5d2051426f655a6b7fbf4786fbd0fd8fffd09322c9b497ef0f7439b3f.css" integrity="sha256-OaysxdIFFCb2Vaa3&#43;/R4b70P2P/9CTIsm0l&#43;8PdDmz8=">
   
   
   
   <link rel="stylesheet" href="https://harrylee.me/style-dark.min.0a647fb6c07e04b77b54fa0515d0a683d39ecdb251dba960fe1f966f7ff36fc2.css" media="(prefers-color-scheme: dark)" integrity="sha256-CmR/tsB&#43;BLd7VPoFFdCmg9OezbJR26lg/h&#43;Wb3/zb8I=">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://harrylee.me/css/theme.css?1590648514" rel="stylesheet">
+  <link href="https://harrylee.me/css/theme.css?1634884233" rel="stylesheet">
 
   
   
@@ -33,18 +33,15 @@
 <meta property="og:description" content="Want to backup your remote files at regular intervals? This post is for you.
 This post focuses on: rsync, expect and cron. To access the remote server, I&rsquo;m assuming that you are using ssh (with password authentication) for that. If you use ftp or other protocols, you will have to tweak the instructions a bit. If you are using SSH with public key (well done!), you will have to tweak the rsync command to use public key." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harrylee.me/blog/2016-05-24-ubuntu-backup-files-regularly-using-rsync-and-cron/" />
+<meta property="og:url" content="https://harrylee.me/blog/2016-05-24-ubuntu-backup-files-regularly-using-rsync-and-cron/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2016-05-24T16:07:47+00:00" />
 <meta property="article:modified_time" content="2016-05-24T16:07:47+00:00" />
+
 <meta itemprop="name" content="Ubuntu: Backup files regularly using expect, rsync and Cron">
 <meta itemprop="description" content="Want to backup your remote files at regular intervals? This post is for you.
-This post focuses on: rsync, expect and cron. To access the remote server, I&rsquo;m assuming that you are using ssh (with password authentication) for that. If you use ftp or other protocols, you will have to tweak the instructions a bit. If you are using SSH with public key (well done!), you will have to tweak the rsync command to use public key.">
-<meta itemprop="datePublished" content="2016-05-24T16:07:47&#43;00:00" />
-<meta itemprop="dateModified" content="2016-05-24T16:07:47&#43;00:00" />
+This post focuses on: rsync, expect and cron. To access the remote server, I&rsquo;m assuming that you are using ssh (with password authentication) for that. If you use ftp or other protocols, you will have to tweak the instructions a bit. If you are using SSH with public key (well done!), you will have to tweak the rsync command to use public key."><meta itemprop="datePublished" content="2016-05-24T16:07:47+00:00" />
+<meta itemprop="dateModified" content="2016-05-24T16:07:47+00:00" />
 <meta itemprop="wordCount" content="366">
-
-
-
 <meta itemprop="keywords" content="ubuntu," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:image" content="https://harrylee.me//img/avatar.png"/>
 <meta name="twitter:title" content="Ubuntu: Backup files regularly using expect, rsync and Cron"/>
@@ -111,7 +108,7 @@ This post focuses on: rsync, expect and cron. To access the remote server, I&rsq
 <p><strong>Create</strong> a new file in <code>~/Documents/</code>, <em>backup.exp</em>, with the contents below:</p>
 
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/expect -f
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/expect -f
 </span><span style="color:#75715e"></span>
 set timeout <span style="color:#ae81ff">19900</span>
 set pass <span style="color:#e6db74">&#34;&lt;mypassword&gt;&#34;</span>
@@ -131,15 +128,15 @@ puts <span style="color:#e6db74">&#34;Successfully backed up!&#34;</span>
 </li>
 <li>
 <p><strong>Change the permission</strong> of the file to be executable:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo chmod +x ~/Documents/backup.exp
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo chmod +x ~/Documents/backup.exp
 </code></pre></div></li>
 <li>
 <p><strong>Run</strong> cron:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo crontab -e
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo crontab -e
 </code></pre></div></li>
 <li>
 <p><strong>Place</strong> the following line at the end of the file.</p>
-<pre><code>    00 06,12,18,00 * * * /home/user/Documents/backup.exp
+<pre tabindex="0"><code>    00 06,12,18,00 * * * /home/user/Documents/backup.exp
 </code></pre><p>This basically tells the server to execute the <em>backup.exp</em> script <strong>every 6 hours</strong>, <strong>every day</strong> at <em>6:00 AM</em>, <em>12:00 PM</em>, <em>18:00 PM</em> and <em>00:00 AM</em>. You can change the intervals however you see fit.</p>
 </li>
 </ol>
