@@ -24,7 +24,7 @@
   
   <link rel="stylesheet" href="https://harrylee.me/style-dark.min.0a647fb6c07e04b77b54fa0515d0a683d39ecdb251dba960fe1f966f7ff36fc2.css" media="(prefers-color-scheme: dark)" integrity="sha256-CmR/tsB&#43;BLd7VPoFFdCmg9OezbJR26lg/h&#43;Wb3/zb8I=">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://harrylee.me/css/theme.css?1643958620" rel="stylesheet">
+  <link href="https://harrylee.me/css/theme.css?1654261411" rel="stylesheet">
 
   
   
@@ -32,8 +32,9 @@
   <meta property="og:title" content="Ubuntu: Suspend and reboot at specific times using Cron" />
 <meta property="og:description" content="If you have a server at home and you want it to be on only during specific times and not 24/7, this script is for you.
 Cron not only is the best tool for this, it also handles scheduled tasks.
- Cron is a system daemon used to execute desired tasks (in the background) at designated times.
- Method   Install Cron on Ubuntu if it is not already installed." />
+Cron is a system daemon used to execute desired tasks (in the background) at designated times.
+Method Install Cron on Ubuntu if it is not already installed.
+Create a new file, suspend_until, in your ~/Documents/ and place the following contents in it." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harrylee.me/blog/2015-02-08-ubuntu-suspend-and-reboot-at-specific-times-using-cron/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2015-02-08T20:13:47+02:00" />
@@ -42,8 +43,9 @@ Cron not only is the best tool for this, it also handles scheduled tasks.
 <meta itemprop="name" content="Ubuntu: Suspend and reboot at specific times using Cron">
 <meta itemprop="description" content="If you have a server at home and you want it to be on only during specific times and not 24/7, this script is for you.
 Cron not only is the best tool for this, it also handles scheduled tasks.
- Cron is a system daemon used to execute desired tasks (in the background) at designated times.
- Method   Install Cron on Ubuntu if it is not already installed."><meta itemprop="datePublished" content="2015-02-08T20:13:47+02:00" />
+Cron is a system daemon used to execute desired tasks (in the background) at designated times.
+Method Install Cron on Ubuntu if it is not already installed.
+Create a new file, suspend_until, in your ~/Documents/ and place the following contents in it."><meta itemprop="datePublished" content="2015-02-08T20:13:47+02:00" />
 <meta itemprop="dateModified" content="2015-02-08T20:13:47+02:00" />
 <meta itemprop="wordCount" content="395">
 <meta itemprop="keywords" content="ubuntu," /><meta name="twitter:card" content="summary"/>
@@ -51,8 +53,9 @@ Cron not only is the best tool for this, it also handles scheduled tasks.
 <meta name="twitter:title" content="Ubuntu: Suspend and reboot at specific times using Cron"/>
 <meta name="twitter:description" content="If you have a server at home and you want it to be on only during specific times and not 24/7, this script is for you.
 Cron not only is the best tool for this, it also handles scheduled tasks.
- Cron is a system daemon used to execute desired tasks (in the background) at designated times.
- Method   Install Cron on Ubuntu if it is not already installed."/>
+Cron is a system daemon used to execute desired tasks (in the background) at designated times.
+Method Install Cron on Ubuntu if it is not already installed.
+Create a new file, suspend_until, in your ~/Documents/ and place the following contents in it."/>
 
   <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -112,79 +115,78 @@ Cron not only is the best tool for this, it also handles scheduled tasks.
 <li>
 <p><strong>Create</strong> a new file, <em>suspend_until</em>, in your ~/Documents/ and place the following contents in it. This script is written by <em>Romke van der Meulen</em>.</p>
 
-
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e"># Auto suspend and wake-up script</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># Puts the computer on standby and automatically wakes it up at specified time</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># Written by Romke van der Meulen &lt;redge.online@gmail.com&gt;</span>
-<span style="color:#75715e"># Minor mods fossfreedom for AskUbuntu</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># Takes a 24hour time HH:MM as its argument</span>
-<span style="color:#75715e"># Example:</span>
-<span style="color:#75715e"># suspend_until 9:30</span>
-<span style="color:#75715e"># suspend_until 18:45</span>
-
-<span style="color:#75715e"># ------------------------------------------------------</span>
-<span style="color:#75715e"># Argument check</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -lt <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-echo <span style="color:#e6db74">&#34;Usage: suspend_until HH:MM&#34;</span>
-exit
-<span style="color:#66d9ef">fi</span>
-
-<span style="color:#75715e"># Check whether specified time today or tomorrow</span>
-DESIRED<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>date +%s -d <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">`</span><span style="color:#66d9ef">))</span>
-NOW<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>date +%s<span style="color:#e6db74">`</span><span style="color:#66d9ef">))</span>
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $DESIRED -lt $NOW <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-DESIRED<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>date +%s -d <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">`</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">24</span><span style="color:#f92672">*</span><span style="color:#ae81ff">60</span><span style="color:#f92672">*</span><span style="color:#ae81ff">60</span><span style="color:#66d9ef">))</span>
-<span style="color:#66d9ef">fi</span>
-
-<span style="color:#75715e"># Kill rtcwake if already running</span>
-sudo killall rtcwake
-
-<span style="color:#75715e"># Set RTC wakeup time</span>
-<span style="color:#75715e"># N.B. change &#34;mem&#34; for the suspend option</span>
-<span style="color:#75715e"># find this by &#34;man rtcwake&#34;</span>
-sudo rtcwake -a -m disk -t $DESIRED &amp;
-
-<span style="color:#75715e"># feedback</span>
-echo <span style="color:#e6db74">&#34;Suspending...&#34;</span>
-
-<span style="color:#75715e"># give rtcwake some time to make its stuff</span>
-sleep <span style="color:#ae81ff">2</span>
-
-<span style="color:#75715e"># then suspend</span>
-<span style="color:#75715e"># N.B. dont usually require this bit</span>
-<span style="color:#75715e">#sudo pm-suspend</span>
-
-<span style="color:#75715e"># Any commands you want to launch after wakeup can be placed here</span>
-<span style="color:#75715e"># Remember: sudo may have expired by now</span>
-
-<span style="color:#75715e"># Wake up with monitor enabled N.B. change &#34;on&#34; for &#34;off&#34; if</span>
-<span style="color:#75715e"># you want the monitor to be disabled on wake</span>
-xset dpms force on
-
-<span style="color:#75715e"># and a fresh console</span>
-clear
-echo <span style="color:#e6db74">&#34;Good morning!&#34;</span>
-
-</code></pre></div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+    </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Auto suspend and wake-up script</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Puts the computer on standby and automatically wakes it up at specified time</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Written by Romke van der Meulen &lt;redge.online@gmail.com&gt;</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Minor mods fossfreedom for AskUbuntu</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Takes a 24hour time HH:MM as its argument</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Example:</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># suspend_until 9:30</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># suspend_until 18:45</span>
+    </span></span><span style="display:flex;"><span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># ------------------------------------------------------</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Argument check</span>
+    </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -lt <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Usage: suspend_until HH:MM&#34;</span>
+    </span></span><span style="display:flex;"><span>exit
+    </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+    </span></span><span style="display:flex;"><span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Check whether specified time today or tomorrow</span>
+    </span></span><span style="display:flex;"><span>DESIRED<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>date +%s -d <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">`</span><span style="color:#66d9ef">))</span>
+    </span></span><span style="display:flex;"><span>NOW<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>date +%s<span style="color:#e6db74">`</span><span style="color:#66d9ef">))</span>
+    </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $DESIRED -lt $NOW <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    </span></span><span style="display:flex;"><span>DESIRED<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span><span style="color:#e6db74">`</span>date +%s -d <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">`</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">24</span><span style="color:#f92672">*</span><span style="color:#ae81ff">60</span><span style="color:#f92672">*</span><span style="color:#ae81ff">60</span><span style="color:#66d9ef">))</span>
+    </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+    </span></span><span style="display:flex;"><span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Kill rtcwake if already running</span>
+    </span></span><span style="display:flex;"><span>sudo killall rtcwake
+    </span></span><span style="display:flex;"><span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Set RTC wakeup time</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># N.B. change &#34;mem&#34; for the suspend option</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># find this by &#34;man rtcwake&#34;</span>
+    </span></span><span style="display:flex;"><span>sudo rtcwake -a -m disk -t $DESIRED &amp;
+    </span></span><span style="display:flex;"><span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># feedback</span>
+    </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Suspending...&#34;</span>
+    </span></span><span style="display:flex;"><span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># give rtcwake some time to make its stuff</span>
+    </span></span><span style="display:flex;"><span>sleep <span style="color:#ae81ff">2</span>
+    </span></span><span style="display:flex;"><span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># then suspend</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># N.B. dont usually require this bit</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo pm-suspend</span>
+    </span></span><span style="display:flex;"><span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Any commands you want to launch after wakeup can be placed here</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Remember: sudo may have expired by now</span>
+    </span></span><span style="display:flex;"><span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># Wake up with monitor enabled N.B. change &#34;on&#34; for &#34;off&#34; if</span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># you want the monitor to be disabled on wake</span>
+    </span></span><span style="display:flex;"><span>xset dpms force on
+    </span></span><span style="display:flex;"><span>
+    </span></span><span style="display:flex;"><span><span style="color:#75715e"># and a fresh console</span>
+    </span></span><span style="display:flex;"><span>clear
+    </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Good morning!&#34;</span>
+    </span></span></code></pre></div>
 
 </li>
 <li>
 <p><strong>Change the permission</strong> of the file so that it is executable.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo chmod +x ~/Documents/suspend_until
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    $ sudo chmod +x ~/Documents/suspend_until
+</span></span></code></pre></div></li>
 <li>
 <p><strong>Run</strong> crontab.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo crontab -e
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    $ sudo crontab -e
+</span></span></code></pre></div></li>
 <li>
 <p><strong>Place</strong> the following line at the end of the file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">      <span style="color:#ae81ff">00</span> <span style="color:#ae81ff">02</span> * * * /home/user/Documents/suspend_until 09:00
-</code></pre></div><p>This basically tells the server to execute the <em>suspend_until</em> script at <em>2:00 AM</em>. The <em>09:00</em> appended at the end of the line tells the server to wake up at <em>9:00 AM</em>. The details are all <strong>explained</strong> in the script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>      <span style="color:#ae81ff">00</span> <span style="color:#ae81ff">02</span> * * * /home/user/Documents/suspend_until 09:00
+</span></span></code></pre></div><p>This basically tells the server to execute the <em>suspend_until</em> script at <em>2:00 AM</em>. The <em>09:00</em> appended at the end of the line tells the server to wake up at <em>9:00 AM</em>. The details are all <strong>explained</strong> in the script.</p>
 </li>
 <li>
 <p>Save the crontab file and <strong>reboot</strong>.</p>

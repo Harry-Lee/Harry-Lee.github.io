@@ -24,7 +24,7 @@
   
   <link rel="stylesheet" href="https://harrylee.me/style-dark.min.0a647fb6c07e04b77b54fa0515d0a683d39ecdb251dba960fe1f966f7ff36fc2.css" media="(prefers-color-scheme: dark)" integrity="sha256-CmR/tsB&#43;BLd7VPoFFdCmg9OezbJR26lg/h&#43;Wb3/zb8I=">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://harrylee.me/css/theme.css?1643958620" rel="stylesheet">
+  <link href="https://harrylee.me/css/theme.css?1654261411" rel="stylesheet">
 
   
   
@@ -130,9 +130,9 @@ This post outlines the configuration needed to incorporate the debugging power o
 <pre tabindex="0"><code>    FROM php:5
     ...
     RUN yes | pecl install xdebug \
-        &amp;&amp; echo &quot;zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)&quot; &gt; /usr/local/etc/php/conf.d/xdebug.ini \
-        &amp;&amp; echo &quot;xdebug.remote_enable=on&quot; &gt;&gt; /usr/local/etc/php/conf.d/xdebug.ini \
-        &amp;&amp; echo &quot;xdebug.remote_autostart=off&quot; &gt;&gt; /usr/local/etc/php/conf.d/xdebug.ini
+        &amp;&amp; echo &#34;zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)&#34; &gt; /usr/local/etc/php/conf.d/xdebug.ini \
+        &amp;&amp; echo &#34;xdebug.remote_enable=on&#34; &gt;&gt; /usr/local/etc/php/conf.d/xdebug.ini \
+        &amp;&amp; echo &#34;xdebug.remote_autostart=off&#34; &gt;&gt; /usr/local/etc/php/conf.d/xdebug.ini
 </code></pre></li>
 <li>
 <p>Build your image</p>

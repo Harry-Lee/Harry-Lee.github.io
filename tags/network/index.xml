@@ -25,7 +25,7 @@ Set Up Listed below is my set up. You don&amp;rsquo;t have to use the exact set 
       <guid>https://harrylee.me/blog/2015-01-10-ubuntu-sharing-externally-connected-drives-over-network/</guid>
       <description>When you have external drives connected to the server, it would be very useful if you can share these drives to users accessing the server as well. This is useful if you have a home media server with externally connected drives.
 This post aims to share drives that are NTFS formatted and changing the permissions of the mounted drives.
-Method   Unmount the drive that is connected already and remount to another folder giving permissions to users.</description>
+Method Unmount the drive that is connected already and remount to another folder giving permissions to users.</description>
     </item>
     
   </channel>

@@ -24,7 +24,7 @@
   
   <link rel="stylesheet" href="https://harrylee.me/style-dark.min.0a647fb6c07e04b77b54fa0515d0a683d39ecdb251dba960fe1f966f7ff36fc2.css" media="(prefers-color-scheme: dark)" integrity="sha256-CmR/tsB&#43;BLd7VPoFFdCmg9OezbJR26lg/h&#43;Wb3/zb8I=">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://harrylee.me/css/theme.css?1643958620" rel="stylesheet">
+  <link href="https://harrylee.me/css/theme.css?1654261411" rel="stylesheet">
 
   
   
@@ -41,7 +41,7 @@ This post focuses on: rsync, expect and cron. To access the remote server, I&rsq
 <meta itemprop="description" content="Want to backup your remote files at regular intervals? This post is for you.
 This post focuses on: rsync, expect and cron. To access the remote server, I&rsquo;m assuming that you are using ssh (with password authentication) for that. If you use ftp or other protocols, you will have to tweak the instructions a bit. If you are using SSH with public key (well done!), you will have to tweak the rsync command to use public key."><meta itemprop="datePublished" content="2016-05-24T16:07:47+00:00" />
 <meta itemprop="dateModified" content="2016-05-24T16:07:47+00:00" />
-<meta itemprop="wordCount" content="366">
+<meta itemprop="wordCount" content="367">
 <meta itemprop="keywords" content="ubuntu," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:image" content="https://harrylee.me//img/avatar.png"/>
 <meta name="twitter:title" content="Ubuntu: Backup files regularly using expect, rsync and Cron"/>
@@ -107,20 +107,19 @@ This post focuses on: rsync, expect and cron. To access the remote server, I&rsq
 <li>
 <p><strong>Create</strong> a new file in <code>~/Documents/</code>, <em>backup.exp</em>, with the contents below:</p>
 
-
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/expect -f
-</span><span style="color:#75715e"></span>
-set timeout <span style="color:#ae81ff">19900</span>
-set pass <span style="color:#e6db74">&#34;&lt;mypassword&gt;&#34;</span>
-spawn rsync -av -e ssh &lt;user&gt;@&lt;ip address&gt;:&lt;/home/user/remote&gt; &lt;<span style="color:#e6db74">&#34;/home/user/backup/remote&#34;</span>&gt;
-expect <span style="color:#e6db74">&#34;assword&#34;</span>
-sleep <span style="color:#ae81ff">2</span>
-send <span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">\r&#34;</span>
-expect -re <span style="color:#e6db74">&#34;total size is&#34;</span>
-expect -re <span style="color:#e6db74">&#34;</span>$<span style="color:#e6db74"> &#34;</span>
-puts <span style="color:#e6db74">&#34;Successfully backed up!&#34;</span>
-
-</code></pre></div>
+    
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/expect -f
+    </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+    </span></span><span style="display:flex;"><span>set timeout <span style="color:#ae81ff">19900</span>
+    </span></span><span style="display:flex;"><span>set pass <span style="color:#e6db74">&#34;&lt;mypassword&gt;&#34;</span>
+    </span></span><span style="display:flex;"><span>spawn rsync -av -e ssh &lt;user&gt;@&lt;ip address&gt;:&lt;/home/user/remote&gt; &lt;<span style="color:#e6db74">&#34;/home/user/backup/remote&#34;</span>&gt;
+    </span></span><span style="display:flex;"><span>expect <span style="color:#e6db74">&#34;assword&#34;</span>
+    </span></span><span style="display:flex;"><span>sleep <span style="color:#ae81ff">2</span>
+    </span></span><span style="display:flex;"><span>send <span style="color:#e6db74">&#34;</span>$pass<span style="color:#e6db74">\r&#34;</span>
+    </span></span><span style="display:flex;"><span>expect -re <span style="color:#e6db74">&#34;total size is&#34;</span>
+    </span></span><span style="display:flex;"><span>expect -re <span style="color:#e6db74">&#34;</span>$<span style="color:#e6db74"> &#34;</span>
+    </span></span><span style="display:flex;"><span>puts <span style="color:#e6db74">&#34;Successfully backed up!&#34;</span>
+    </span></span></code></pre></div>
 
 <ul>
 <li>replace all the necessary parameters with <strong>your own credentials</strong>. (Basically everything encased between &lt; &gt;).</li>
@@ -128,12 +127,12 @@ puts <span style="color:#e6db74">&#34;Successfully backed up!&#34;</span>
 </li>
 <li>
 <p><strong>Change the permission</strong> of the file to be executable:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo chmod +x ~/Documents/backup.exp
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    $ sudo chmod +x ~/Documents/backup.exp
+</span></span></code></pre></div></li>
 <li>
 <p><strong>Run</strong> cron:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ sudo crontab -e
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    $ sudo crontab -e
+</span></span></code></pre></div></li>
 <li>
 <p><strong>Place</strong> the following line at the end of the file.</p>
 <pre tabindex="0"><code>    00 06,12,18,00 * * * /home/user/Documents/backup.exp

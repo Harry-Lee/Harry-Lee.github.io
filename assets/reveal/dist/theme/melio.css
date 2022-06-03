@@ -196,6 +196,14 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   max-height: 400px;
   word-wrap: normal; }
 
+div.slide-footer {
+  position: absolute;
+  width: 100%;
+  color: #b7b5b3;
+  top: -40px;
+  font-size: 0.7em;
+}
+
 /*==================================================================*/
 .melio-table {
   /* position: relative; */
